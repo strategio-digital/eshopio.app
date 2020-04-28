@@ -1,0 +1,7 @@
+/www/temp/
+/node_modules/
+/vendor/
+/docker/*.local/
+/docker/nginx/nginx.conf
+/assets/dynamic/*
+.env

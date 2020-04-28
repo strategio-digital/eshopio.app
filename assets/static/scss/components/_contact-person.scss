@@ -1,0 +1,29 @@
+/**
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ */
+.contact-person {
+    bottom: -28px;
+    right: 0;
+    max-width: 200px;
+    z-index: -20;
+    max-height: 90%;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md) {
+        max-width: 400px;
+        right: -270px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 450px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        right: -330px;
+        max-width: 500px;
+    }
+}

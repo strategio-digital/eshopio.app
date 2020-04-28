@@ -1,0 +1,23 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType App\Database\Entity\Contact $contact}
+
+<tr>
+    <td>{$iterator->getCounter()}</td>
+    <td>
+        <div class="badge badge-danger">Ne</div>
+    </td>
+    <td>
+        {if $contact->getSegment()}
+            <div class="badge badge-warning">{$contact->getSegment()->getName()}</div>
+        {/if}
+    </td>
+    <td>{$contact->getEmail()}</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+</tr>

@@ -1,0 +1,35 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType Doctrine\Common\Collections\ArrayCollection $rows}
+{varType App\Database\Entity\EmailCampaign $emailCampaign}
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped mt-3">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Odesláno</th>
+            <th scope="col">Segment</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Otevřeno</th>
+            <th scope="col">Kliknuto</th>
+            <th scope="col">Poslední&nbsp;IP</th>
+            <th scope="col">Poslední&nbsp;zařízení</th>
+        </tr>
+        </thead>
+        <tbody n:snippet="summary">
+            {if $emailCampaign->getStatus() === App\Database\Entity\EmailCampaign::STATUS_INACTIVE}
+                {foreach $rows as $row}
+                    {include './block/contact.latte', 'contact' => $row, 'iterator' => $iterator}
+                {/foreach}
+            {else}
+                {foreach $rows as $row}
+                    {include './block/sent-email.latte', 'sentEmail' => $row, 'iterator' => $iterator}
+                {/foreach}
+            {/if}
+        </tbody>
+    </table>
+</div>

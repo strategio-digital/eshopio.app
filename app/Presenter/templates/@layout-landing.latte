@@ -1,0 +1,45 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<!doctype html>
+<html class="h-100" lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hromadný a efektivní e-mailing | Contactio</title>
+
+    <meta name="description" content="Oslovte tisíce kontaktů, navažte spolupráci nebo se spojte s klienty na jedno kliknutí.">
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{$baseUrl}/temp/static/img/og.png?v={php echo date ('dmyhis')}">
+    <meta property="og:url" content="{$baseUrl}">
+    <meta property="og:title" content="Hromadný a efektivní e-mailing">
+    <meta property="og:description" content="Oslovte tisíce kontaktů, navažte spolupráci, spojte se s klienty na jedno kliknutí.">
+
+    <link rel="shortcut icon" href="{$baseUrl}/favicon.ico">
+    {block head}
+        {control assetLoader 'css'}
+    {/block}
+</head>
+<body class="h-100 position-relative">
+
+    {include content}
+
+    {block scripts}
+        {control assetLoader 'js'}
+    {/block}
+
+    {* Flash Notifications & Ajax notifications *}
+    <div class="toast-container" id="notifications">
+        {include './../../Component/Notification/templates/notification.latte'}
+    </div>
+
+    {block modals}
+        {control contactModal}
+    {/block}
+</body>
+</html>

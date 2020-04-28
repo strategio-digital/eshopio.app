@@ -1,0 +1,34 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div class="table-responsive">
+    <table n:snippet="summary" class="table table-bordered table-hover table-striped mt-3">
+        <thead>
+        <tr>
+            <th scope="col">Název</th>
+            <th scope="col">Počet&nbsp;kontaktů</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr n:foreach="$segments as $segment">
+            <td>{$segment->getName()}</td>
+            <td>{$segment->getContactsCount()}</td>
+            <td>
+                <div class="d-flex justify-content-end">
+                    <a href="{plink segmentRemoveModal:open! $segment->getId()}" data-ajax-button="true"
+                       class="btn btn-outline-danger btn-sm ml-1" data-tooltip="tooltip" data-placement="left" title="Odstranit segment">
+                        <i class="fas fa-times"></i>
+                    </a>
+                    <a href="{plink segmentEditModal:open! $segment->getId()}" data-ajax-button="true"
+                       class="btn btn-primary btn-sm ml-1" data-tooltip="tooltip" data-placement="left" title="Upravit segment">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

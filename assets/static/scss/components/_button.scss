@@ -1,0 +1,75 @@
+/**
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ */
+
+@-webkit-keyframes bg-progress {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}
+
+@-moz-keyframes bg-progress {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}
+
+@keyframes bg-progress {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}
+
+[data-ajax-button].disabled
+{
+    animation: bg-progress 500ms infinite;
+    -moz-animation: bg-progress 500ms infinite; /* Firefox */
+    -webkit-animation: bg-progress 500ms infinite; /* Safari and Chrome */
+    background-size: 400% 400%;
+    background-image: linear-gradient(-45deg, lighten($primary, 25%), $primary, lighten($primary, 25%), $primary);
+
+    &.btn-pink,
+    &.btn-outline-pink {
+        background-image: linear-gradient(-45deg, lighten($pink, 25%), $pink, lighten($pink, 25%), $pink);
+    }
+}
+
+.btn
+{
+    &.btn-lg
+    {
+        font-weight: 700;
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        //font-size: 1rem;
+
+        @include media-breakpoint-down(md) {
+            padding: .7rem 1rem;
+            font-size: 1rem;
+        }
+
+        &.btn-pink
+        {
+            box-shadow: 0 0 5px lighten($gray-700, 10%);
+        }
+    }
+}

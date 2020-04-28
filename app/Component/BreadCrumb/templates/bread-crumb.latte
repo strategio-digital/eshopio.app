@@ -1,0 +1,18 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+        {foreach $breadCrumb as $breadCrumbItem}
+            <li class="breadcrumb-item {if !$breadCrumbItem->getLink()}active{/if}">
+                {if $breadCrumbItem->getLink() && !$iterator->isLast()}
+                    <a href="{plink $breadCrumbItem->getLink()}">{$breadCrumbItem->getName()}</a>
+                {else}
+                    {$breadCrumbItem->getName()}
+                {/if}
+            </li>
+        {/foreach}
+    </ol>
+</nav>

@@ -1,0 +1,92 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div n:snippet="form">
+    <form n:name="form">
+        {block prependForm}
+            <button type="submit" class="btn btn-primary mt-3" data-ajax-button="true">Vytvořit kampaň</button>
+        {/block}
+
+        <div class="bg-light p-4 p-md-5 mt-3 {if $control->getName() === 'emailCampaignAddForm'}mb-3{/if}">
+            <div class="form-group row">
+                <label n:name="name" class="col-sm-3 col-form-label">Název kampaně</label>
+                <div class="col-sm-9">
+                    <input n:name="name" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label n:name="smtpSettingId" class="col-sm-3 col-form-label">Výběr SMTP</label>
+                <div class="col-sm-9">
+                    {var $items = $form['smtpSettingId']->items}
+                    {if count($items) === 0}
+                        <div class="text-danger mb-1">
+                            Přidejte alespoň jeden <a href="{plink SmtpSetting:summary}">SMTP server</a>, který bude rozesílat kampaně.
+                        </div>
+                    {/if}
+                    <select n:name="smtpSettingId" class="custom-select"></select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label n:name="startDate" class="col-sm-3 col-form-label">Datum první rozesílky</label>
+                <div class="col-sm-9">
+                    <input n:name="startDate" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label n:name="startTime" class="col-sm-3 col-form-label">Začít odesílat od</label>
+                <div class="col-sm-9">
+                    <input n:name="startTime" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label n:name="subject" class="col-sm-3 col-form-label">Předmět zprávy (e-mailu)</label>
+                <div class="col-sm-9">
+                    <input n:name="subject" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label n:name="message" class="col-sm-3 col-form-label">Zpráva (e-mail)</label>
+                <div class="col-sm-9">
+                    <textarea n:name="message" class="form-control tiny-mce" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-3 col-form-label">Povolené dny</div>
+                <div class="col-sm-9 d-block d-md-flex">
+                    {foreach $form['allowedDayIds']->items as $key => $label}
+                        <div class="custom-control custom-checkbox mr-4 mt-2">
+                            <input n:name="allowedDayIds:$key" type="checkbox" class="custom-control-input" data-lfv-message-id="allowed-days-checkbox">
+                            <label n:name="allowedDayIds:$key" class="custom-control-label">{$label}</label>
+                        </div>
+                    {/foreach}
+                </div>
+                <div class="col-sm-9 offset-sm-3">
+                    <div id="allowed-days-checkbox"></div>
+                </div>
+            </div>
+            <div class="form-group row mb-0">
+                <div class="col-sm-3 col-form-label">Odeslat na segmenty</div>
+                <div class="col-sm-9">
+                    {var $items = $form['segmentIds']->items}
+                    {if count($items) === 0}
+                        <div class="text-danger mt-2">
+                            Vytvořte alespoň jeden <a href="{plink Segment:summary}">sgment</a>, který bude obsahovat <a href="{plink Contact:summary}">kontakty</a> s e-mailovými adresami.
+                        </div>
+                    {/if}
+                    {foreach $items as $key => $label}
+                        <div class="custom-control custom-checkbox mr-2">
+                            <input n:name="segmentIds:$key" type="checkbox" class="custom-control-input" data-lfv-message-id="segments-checkbox">
+                            <label n:name="segmentIds:$key" class="custom-control-label">{$label|noescape}</label>
+                        </div>
+                    {/foreach}
+                </div>
+                <div class="col-sm-9 offset-sm-3">
+                    <div id="segments-checkbox"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

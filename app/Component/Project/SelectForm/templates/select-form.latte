@@ -1,0 +1,30 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div class="w-100" style="max-width: 360px">
+    <h1 class="h4 py-4 px-5 bg-success text-white mb-0">Vyberte projekt</h1>
+    <div class="bg-light p-5">
+        {if $projects->count() === 0}
+            <div class="bg-white p-4 mb-5">
+                Zatím nemáte žádný projekt. V přehledu projektů si jej můžete vytvořit.
+            </div>
+
+            <a href="{plink Project:summary}" class="btn btn-primary w-100">
+                Přejít na přehled projektů
+            </a>
+        {else}
+            <form n:name="form">
+                <div class="form-group">
+                    <select n:name="projectId" class="custom-select"></select>
+                </div>
+                <div class="form-group">
+                    <button n:name="save" type="submit" class="btn btn-primary w-100" data-ajax-button="true">
+                        Pokračovat
+                    </button>
+                </div>
+            </form>
+        {/if}
+    </div>
+</div>

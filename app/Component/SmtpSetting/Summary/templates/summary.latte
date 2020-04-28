@@ -1,0 +1,61 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div n:snippet="summary" class="table-responsive">
+    <table class="table table-bordered table-hover table-striped mt-3">
+        <thead>
+        <tr>
+            <th scope="col">Server</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Jméno</th>
+            <th scope="col">Port</th>
+            {*<th scope="col">DKIM</th>*}
+            <th scope="col">Limity&nbsp;<small>(min&nbsp;|&nbsp;den)</small></th>
+            <th scope="col">Odesláno</th>
+            <th scope="col">Naposledy</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr n:foreach="$smtpSettings as $smtpSetting">
+            <td>{$smtpSetting->getHost()}</td>
+            <td>{$smtpSetting->getSenderEmail()}</td>
+            <td>{$smtpSetting->getSenderName()}</td>
+            <td>
+                {$smtpSetting->getPort()}&nbsp;{if $smtpSetting->getSecure()}/&nbsp;{$smtpSetting->getSecure()|upper}{/if}
+            </td>
+            {*<td>Ano</td>*}
+            <td>
+                {$smtpSetting->getMinuteLimit()}/min |
+                {$smtpSetting->getReachedDayLimit()}/{$smtpSetting->getDayLimit()}
+            </td>
+            <td>{$smtpSetting->getMessagesCount()}</td>
+            <td>
+                {if $smtpSetting->getLastUsage()}
+                    {$smtpSetting->getLastUsage()|date: 'j.n.Y H:i:s'|replace:' ', '&nbsp;'|noescape}
+                {else}
+                    -
+                {/if}
+            </td>
+            <td>
+                <div class="d-flex justify-content-end">
+                    <a href="{plink smtpSettingRemoveModal:open! $smtpSetting->getId()}" data-ajax-button="true"
+                       class="btn btn-outline-danger btn-sm ml-1" data-tooltip="tooltip" data-placement="left" title="Odstranit SMTP">
+                        <i class="fas fa-times"></i>
+                    </a>
+                    <a href="{link test! $smtpSetting->getId()}" data-ajax-button="true"
+                        class="btn btn-success btn-sm ml-1" data-tooltip="tooltip" data-placement="left" title="Otestovat spojení se SMTP">
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                    <a href="{plink smtpSettingEditModal:open! $smtpSetting->getId()}" data-ajax-button="true"
+                       class="btn btn-primary btn-sm ml-1" data-tooltip="tooltip" data-placement="left" title="Upravit SMTP">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

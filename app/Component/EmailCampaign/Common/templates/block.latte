@@ -1,0 +1,48 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType App\Database\Entity\EmailCampaign $emailCampaign}
+
+{define emailCampaignStatus}
+    {var $status = $emailCampaign->getStatus()}
+
+    <div class="mt-3 text-light font-weight-bold">
+        {if !$emailCampaign->getSmtpSetting() && $status !== App\Database\Entity\EmailCampaign::STATUS_FINISHED}
+            <div class="p-3 bg-danger text-white font-weight-bold mt-3">
+                Vaše kampaň se nedoručuje, přiřaďte ke kampani SMTP server.
+            </div>
+        {else}
+            {switch $status}
+                {case App\Database\Entity\EmailCampaign::STATUS_INACTIVE}
+                <div class="p-3 bg-danger">Kampaň musíte ještě otestovat a odstartovat: <span class="font-weight-normal">Možnosti -> Otestovat & Možnosti -> Odstartovat</span></div>
+            {case App\Database\Entity\EmailCampaign::STATUS_ACTIVE}
+                <div class="p-3 bg-success">Kampaň je aktivní a rozesílka probíhá dle Vašeho nastavení.</div>
+            {case App\Database\Entity\EmailCampaign::STATUS_PAUSED}
+                <div class="p-3 bg-danger">Kampaň je pozastavena a čeká na spuštění: <span class="font-weight-normal">Možnosti -> Pokračovat</span></div>
+            {case App\Database\Entity\EmailCampaign::STATUS_FINISHED}
+                <div class="p-3 bg-light text-dark">Kampaň byla odeslána (dokončena), ovšem <span class="text-success">měření statistik probíhá neustále</span>.</div>
+            {/switch}
+        {/if}
+    </div>
+{/define}
+
+{define emailCampaignStatusBadges}
+    {var $status = $emailCampaign->getStatus()}
+
+    {if !$emailCampaign->getSmtpSetting() && $status !== App\Database\Entity\EmailCampaign::STATUS_FINISHED}
+        <span class="badge badge-danger">Chyba - SMTP</span>
+    {else}
+        {switch $status}
+            {case App\Database\Entity\EmailCampaign::STATUS_INACTIVE}
+                <span class="badge badge-danger">čeká na odstartování</span>
+            {case App\Database\Entity\EmailCampaign::STATUS_ACTIVE}
+                <span class="badge badge-success">aktivní</span>
+            {case App\Database\Entity\EmailCampaign::STATUS_PAUSED}
+                <span class="badge badge-danger">pozastaveno</span>
+            {case App\Database\Entity\EmailCampaign::STATUS_FINISHED}
+                <span class="badge badge-light">dokončeno</span>
+        {/switch}
+    {/if}
+{/define}

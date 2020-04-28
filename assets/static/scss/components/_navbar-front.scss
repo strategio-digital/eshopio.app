@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ */
+
+.navbar-front {
+
+    .active {
+        background-color: $white;
+    }
+
+    .navbar-inner {
+        display: flex;
+        .btn {
+            margin-right: 1rem;
+            @include media-breakpoint-down(sm) {
+                //font-size: .85rem;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}

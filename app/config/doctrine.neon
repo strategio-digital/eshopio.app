@@ -1,0 +1,34 @@
+extensions:
+    doctrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
+    doctrine.dbal: Nettrine\DBAL\DI\DbalExtension
+    doctrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension
+    doctrine.orm: Nettrine\ORM\DI\OrmExtension
+    doctrine.orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
+    doctrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension
+    doctrine.cache: Nettrine\Cache\DI\CacheExtension
+    doctrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
+
+doctrine.orm.annotations:
+    paths:
+        - %appDir%/Database/Entity # The root folder where to start search for entities
+
+doctrine.dbal:
+    debug:
+        panel: %debugMode%
+    connection:
+        driver: mysqli
+        charset: UTF8
+        host: mariadb
+        user: %MYSQL_USER%
+        password: %MYSQL_PASSWORD%
+        dbname: %MYSQL_DATABASE%
+
+doctrine.orm:
+    configuration:
+        customStringFunctions:
+            date: App\Database\Bundle\Date
+
+doctrine.migrations:
+    directory: %appDir%/Database/Migration
+    namespace: App\Database\Migration
+

@@ -1,0 +1,110 @@
+version: '3'
+
+services:
+
+  php-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile.sender
+    tty: true
+    working_dir: /in-docker
+    restart: "no"
+    volumes:
+      - ./app:/in-docker/app:cached
+      - ./www:/in-docker/www:cached
+      - ./vendor:/in-docker/vendor:cached
+      - ./temp:/in-docker/temp:cached
+      - ./log:/in-docker/log:cached
+    networks:
+      - wakers-network
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    working_dir: /in-docker
+    restart: "no"
+    volumes:
+      - ./app:/in-docker/app:cached
+      - ./www:/in-docker/www:cached
+      - ./assets/dynamic:/in-docker/assets/dynamic:cached
+      - ./vendor:/in-docker/vendor:cached
+      - ./temp:/in-docker/temp:cached
+      - ./log:/in-docker/log:cached
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
+    networks:
+      - wakers-network
+
+  nginx:
+    image: nginx:1.17.6-alpine
+    restart: "no"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./app:/in-docker/app:cached
+      - ./www:/in-docker/www:cached
+      - ./assets/dynamic:/in-docker/assets/dynamic:cached
+      - ./vendor:/in-docker/vendor:cached
+      - ./temp:/in-docker/temp:cached
+      - ./log:/in-docker/log:cached
+
+      # Nginx config
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/servers/production.conf:/etc/nginx/servers/production.conf:ro
+      - ./docker/nginx/servers/development.conf:/etc/nginx/servers/development.conf:ro
+
+      # Certbot certificates
+      - ./docker/certbot.local/conf:/etc/letsencrypt:cached
+      - ./docker/certbot.local/www:/var/www/certbot:cached
+    networks:
+      - wakers-network
+
+  mariadb:
+    image: mariadb:10.4.2
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      # Mariadb folder
+      - ./docker/mariadb/config.cnf:/etc/mysql/conf.d/custom.cnf
+      - ./docker/mariadb.local:/var/lib/mysql:cached
+      # Dumps
+      #- ./docker/mariadb:/dumps:cached
+    networks:
+      - wakers-network
+
+  adminer:
+    image: dockette/adminer:dg
+    restart: "no"
+    ports:
+      - "8080:80"
+    networks:
+      - wakers-network
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      # Certbot certificates
+      - ./docker/certbot.local/conf:/etc/letsencrypt:cached
+      - ./docker/certbot.local/www:/var/www/certbot:cached
+      - ./docker/certbot.local/log:/var/log/letsencrypt:cached
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    networks:
+      - wakers-network
+
+  sftp:
+    restart: "no"
+    image: atmoz/sftp:alpine-3.7
+    volumes:
+      - ./log:/home/${SFTP_USER}/log
+      - ./www/temp:/home/${SFTP_USER}/www/temp
+    ports:
+      - "2222:22"
+    command: ${SFTP_USER}:${SFTP_PASSWORD}:1001
+    networks:
+      - wakers-network
+
+networks:
+  wakers-network:
