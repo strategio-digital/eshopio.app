@@ -1,9 +1,0 @@
-FROM php:7.4.1-cli
-WORKDIR /in-docker
-
-# Install libs & extensions
-RUN docker-php-ext-install mysqli
-RUN docker-php-ext-install pcntl
-
-COPY .env /in-docker/.env
-#CMD ["php", "/in-docker/www/index.php", "wakers:start-sender-loop"]

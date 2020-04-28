@@ -7,11 +7,11 @@ $(function () {
     $.conversionAdd('contactForm', function (conversion) {
 
         // Send goal to Analytics
-        gtag('event', 'conversion', {
+        /*gtag('event', 'conversion', {
             'event_category' : 'form',
             'event_label' : conversion.name,
             'value': conversion.value,
-        });
+        });*/
 
         // Send to Ads
         /*gtag('event', 'conversion', {
@@ -29,17 +29,6 @@ $(function () {
             currency: 'CZK',
         });*/
 
-        $('#' + conversion.name)/*.toggle('hide').*/.parent().find('.alert.alert-success').toggle('show')
-    });
-
-    $.conversionAdd('registerForm', function (conversion) {
-
-        gtag('event', 'conversion', {
-            'event_category' : 'form',
-            'event_label' : conversion.name,
-            'value': conversion.value,
-        });
-
-        $('#' + conversion.name).toggle('hide').parent().find('.alert.alert-success').toggle('show')
+        //$('#' + conversion.name)/*.toggle('hide').*/.parent().find('.alert.alert-success').toggle('show')
     });
 });

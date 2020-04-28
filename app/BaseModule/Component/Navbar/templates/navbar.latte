@@ -1,0 +1,42 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{*<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{plink Project:summary}">Eshopio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item {$presenter->isLinkCurrent('Project:*') ? 'active'}">
+                <a class="nav-link" href="{plink Project:summary}">Projekty</a>
+            </li>
+            <li class="nav-item dropdown {$presenter->isLinkCurrent('Contact:*') || $presenter->isLinkCurrent('Segment:*') ? 'active'}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Kontakty
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item {$presenter->isLinkCurrent('Contact:*') ? 'active'}" href="{plink Contact:summary}">Přehled kontaktů</a>
+                    <a class="dropdown-item {$presenter->isLinkCurrent('Segment:*') ? 'active'}" href="{plink Segment:summary}">Segmentace kontaktů</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown {$presenter->isLinkCurrent('EmailCampaign:*') || $presenter->isLinkCurrent('SmtpSetting:*') ? 'active'}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    E-mailing
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item {$presenter->isLinkCurrent('EmailCampaign:*') ? 'active'}" href="{plink EmailCampaign:summary}">Přehled kampaní</a>
+                    <a class="dropdown-item {$presenter->isLinkCurrent('SmtpSetting:*') ? 'active'}" href="{plink SmtpSetting:summary}">Nastavení SMTP</a>
+                </div>
+            </li>
+        </ul>
+        <div class="ml-auto mb-3 mb-lg-0">
+            <a class="btn btn-outline-light mt-3 mt-lg-0 {$presenter->isLinkCurrent('User:*') ? 'active'}" href="{plink User:profile}">
+                {$presenter->activeUser->getEmail()}
+            </a>
+            <a class="btn btn-outline-light mt-3 mt-lg-0" href="{plink logout!}">Odhlásit se</a>
+        </div>
+    </div>
+</nav>*}

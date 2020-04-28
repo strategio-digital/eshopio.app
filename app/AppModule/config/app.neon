@@ -1,0 +1,52 @@
+php:
+	date.timezone: Europe/Prague
+	output_buffering: 4096
+
+application:
+    catchExceptions: %NETTE_CATCH_EXCEPTIONS%
+    errorPresenter: Base:Error
+    mapping:
+        *: App\*Module\Presenter\*Presenter
+
+http:
+    frames: true
+    headers:
+        X-Powered-By: 'Eshopio.app'
+
+tracy:
+    email: %MAIL_ADMIN_EMAIL%
+    editor: 'phpstorm://open?file=%file&line=%line'
+    editorMapping:
+        '/in-docker': '/Users/jzaplet/www/eshopio.webapp'
+
+session:
+	expiration: 6 hours
+
+services:
+    # Mailer
+    mail.mailer: App\BaseModule\Mailer\Error\TracyMailer(%SMTP_HOST%, %SMTP_PASSWORD%, %SMTP_USERNAME%, %MAIL_ADMIN_NAME%, %MAIL_ADMIN_EMAIL%, %DOMAIN_URL%)
+    - App\UserModule\Mailer\User\UserMailer(%SMTP_HOST%, %SMTP_PASSWORD%, %SMTP_USERNAME%, %MAIL_ADMIN_NAME%, %MAIL_ADMIN_EMAIL%, %DOMAIN_URL%)
+
+    # User
+    - App\UserModule\Database\Manager\UserManager
+    - App\UserModule\Database\Repository\UserRepository
+    - App\UserModule\Component\User\LoginForm\ILoginForm
+    - App\UserModule\Component\User\NameForm\INameForm
+    - App\UserModule\Component\User\PasswordForm\IPasswordForm
+    authenticator: App\UserModule\Security\Authenticator
+    commands.createUser:
+        class: App\UserModule\Console\CreateUserCommand
+        tags: [console.command: wakers:create-user]
+
+    # Router
+    router: App\AppModule\Router\RouterFactory::createRouter
+
+    application.linkGenerator:
+        arguments:
+            refUrl: Nette\Http\UrlScript(%DOMAIN_URL%)
+
+extensions:
+    console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+includes:
+    - ./../../../vendor/phpstan/phpstan-nette/extension.neon

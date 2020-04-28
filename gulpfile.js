@@ -17,13 +17,12 @@ const
 
 // Asset loadery
 const loaders = {
-    sysFrontend: './assets/static/sys-frontend',
+    backend: './assets/static/backend',
 };
 
 // Názvy výsledných souborů (js / scss)
 const output = {
-    frontend: 'sys-frontend-build',
-
+    backend: 'backend-build',
     manifest: '../manifest.json'
 };
 
@@ -36,33 +35,33 @@ const storage = {
 
 // Načtené assets
 var assets = {
-    sysFrontend: null,
+    backend: null,
 };
 
 // Načte assets
 gulp.task('load:assets', function (promise) {
 
-    delete require.cache[require.resolve(loaders.sysFrontend)];
+    delete require.cache[require.resolve(loaders.backend)];
 
-    assets.sysFrontend = require(loaders.sysFrontend);
+    assets.backend = require(loaders.backend);
 
     promise();
 });
 
-// Kompilace JS frontendu (custom & system)
-gulp.task('compile:frontend:js', function (promise) {
+// Kompilace JS backendu (custom & system)
+gulp.task('compile:backend:js', function (promise) {
 
     // Případně přidá production only JS
-    assets.sysFrontend.js = (env.is.production() ? assets.sysFrontend.js.concat(assets.sysFrontend.jsOnlyProduction) : assets.sysFrontend.js);
+    //assets.frontend.js = (env.is.production() ? assets.frontend.js.concat(assets.frontend.jsOnlyProduction) : assets.frontend.js);
 
-    if (assets.sysFrontend.js.length === 0) {
+    if (assets.backend.js.length === 0) {
         return promise();
     }
 
     // Minifikuje, sloučí a uloží název souboru do manifestu
-    return gulp.src(filesExist(assets.sysFrontend.js))
+    return gulp.src(filesExist(assets.backend.js))
 
-        .pipe(concat(output.frontend + '.js'))
+        .pipe(concat(output.backend + '.js'))
         .pipe(env.if.production(uglify()))
 
         .pipe(hash())
@@ -72,21 +71,21 @@ gulp.task('compile:frontend:js', function (promise) {
 
 });
 
-// Kompilace SCSS frontendu (custom & system)
-gulp.task('compile:frontend:styles', function (promise) {
+// Kompilace SCSS backendu (custom & system)
+gulp.task('compile:backend:styles', function (promise) {
 
-    if (assets.sysFrontend.scss.length === 0) {
+    if (assets.backend.scss.length === 0) {
         return promise();
     }
 
-    return gulp.src(filesExist(assets.sysFrontend.scss))
+    return gulp.src(filesExist(assets.backend.scss))
 
         .pipe(env.if
         // compressed / compact
             .production(sass.sync( { importer: packageImporter(), outputStyle: 'compressed' }).on('error', sass.logError))
             .else(sass.sync( { importer: packageImporter(),  outputStyle: 'expanded' }).on('error', sass.logError)))
 
-        .pipe(concat(output.frontend  + '.css'))
+        .pipe(concat(output.backend  + '.css'))
         .pipe(env.if.production(cleanCSS()))
 
         .pipe(hash())
@@ -98,7 +97,7 @@ gulp.task('compile:frontend:styles', function (promise) {
 
 gulp.task('copy:files', function (promise) {
 
-    var files = assets.sysFrontend.file;
+    var files = assets.backend.file;
 
     files.forEach(function (file)
     {
@@ -112,8 +111,8 @@ gulp.task('copy:files', function (promise) {
 // Paralélně zpracuje tasky
 gulp.task('default:parallel', gulp.parallel(
 
-    'compile:frontend:styles',
-    'compile:frontend:js',
+    'compile:backend:styles',
+    'compile:backend:js',
     'copy:files'
 
 ));

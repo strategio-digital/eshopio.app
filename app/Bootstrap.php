@@ -28,8 +28,8 @@ class Bootstrap
         $configurator->setTempDirectory(__DIR__ . '/../temp');
 
 		$configurator
-			->addConfig(__DIR__ . '/config/app.neon')
-			->addConfig(__DIR__ . '/config/doctrine.neon');
+			->addConfig(__DIR__ . '/AppModule/config/app.neon')
+			->addConfig(__DIR__ . '/AppModule/config/doctrine.neon');
 
 		return $configurator;
 	}

@@ -1,7 +1,7 @@
 {
-	"name": "jzaplet/contactio",
+	"name": "wakerscz/eshopio",
 	"description": "",
-	"homepage": "https://www.contactio.app",
+	"homepage": "https://www.eshopio.app",
 	"type": "project",
 	"license": ["proprietary"],
 	"authors": [
@@ -23,7 +23,7 @@
 		"nette/safe-stream": "^2.4",
 		"nette/security": "^3.0",
 		"nette/utils": "^3.0",
-		"latte/latte": "2.7.0-RC2",
+		"latte/latte": "^2.7",
 		"tracy/tracy": "^2.6",
 		"nettrine/orm": "^0.5.0",
 		"nettrine/dbal": "^0.6.2",
@@ -32,16 +32,10 @@
         "nettrine/migrations": "^0.6.1",
 		"contributte/console": "^0.8.0",
 		"ramsey/uuid": "^3.9",
-		"contributte/event-dispatcher": "^0.7.0",
-		"phpoffice/phpspreadsheet": "^1.11",
-		"spatie/async": "^1.2",
-		"symfony/dotenv": "^5.0",
-		"symfony/dom-crawler": "^5.0",
-		"symfony/css-selector": "^5.0"
+		"symfony/dotenv": "^5.0"
 	},
     "require-dev": {
-        "phpstan/phpstan-nette": "^0.12.3",
-		"symfony/var-dumper": "^5.0"
+        "phpstan/phpstan-nette": "^0.12.3"
     },
     "autoload": {
         "psr-4": {

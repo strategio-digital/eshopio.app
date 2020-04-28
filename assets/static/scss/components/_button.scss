@@ -52,24 +52,3 @@
         background-image: linear-gradient(-45deg, lighten($pink, 25%), $pink, lighten($pink, 25%), $pink);
     }
 }
-
-.btn
-{
-    &.btn-lg
-    {
-        font-weight: 700;
-        border-radius: 2rem;
-        padding: 1rem 2rem;
-        //font-size: 1rem;
-
-        @include media-breakpoint-down(md) {
-            padding: .7rem 1rem;
-            font-size: 1rem;
-        }
-
-        &.btn-pink
-        {
-            box-shadow: 0 0 5px lighten($gray-700, 10%);
-        }
-    }
-}

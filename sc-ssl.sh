@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # First without www.
-domains=(contactio.app www.contactio.app)
+domains=(eshopio.app www.eshopio.app)
 email="zapletal@wakers.cz"
 
 data_path="./docker/certbot.local"

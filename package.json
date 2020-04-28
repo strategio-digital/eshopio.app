@@ -1,21 +1,19 @@
 {
-    "name": "contactio",
+    "name": "eshopio",
     "authors": [
         "Jiří Zapletal <zapletal@wakers.cz>"
     ],
     "license": "UNLICENSED",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.12.1",
         "bootstrap": "^4.4.1",
         "jquery": "^3.4.1",
         "live-form-validation": "^1.9.0",
         "magnific-popup": "^1.1.0",
         "nette.ajax.js": "^2.3.0",
-        "owl.carousel": "^2.3.4",
         "popper.js": "^1.16.1",
-        "tinymce": "^5.2.0"
-    },
-    "devDependencies": {
+        "tinymce": "^5.2.0",
         "files-exist": "^1.1.0",
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.2.0",

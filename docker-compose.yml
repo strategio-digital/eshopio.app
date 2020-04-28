@@ -2,22 +2,6 @@ version: '3'
 
 services:
 
-  php-cli:
-    build:
-      context: .
-      dockerfile: Dockerfile.sender
-    tty: true
-    working_dir: /in-docker
-    restart: "no"
-    volumes:
-      - ./app:/in-docker/app:cached
-      - ./www:/in-docker/www:cached
-      - ./vendor:/in-docker/vendor:cached
-      - ./temp:/in-docker/temp:cached
-      - ./log:/in-docker/log:cached
-    networks:
-      - wakers-network
-
   php:
     build:
       context: .
