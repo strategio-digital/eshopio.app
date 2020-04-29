@@ -47,8 +47,30 @@
 @import "~bootstrap/scss/utilities";
 //@import "~bootstrap/scss/print";
 
-// Layout webu (custom layout)
-@import "assets/static/scss/components/global";
+// Font Awesome
+//@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import '~@fortawesome/fontawesome-free/scss/variables';
+@import '~@fortawesome/fontawesome-free/scss/mixins';
+@import '~@fortawesome/fontawesome-free/scss/core';
+@import '~@fortawesome/fontawesome-free/scss/larger';
+//@import '~@fortawesome/fontawesome-free/scss/fixed-width';
+//@import '~@fortawesome/fontawesome-free/scss/list';
+//@import '~@fortawesome/fontawesome-free/scss/bordered-pulled';
+//@import '~@fortawesome/fontawesome-free/scss/animated';
+//@import '~@fortawesome/fontawesome-free/scss/rotated-flipped';
+//@import '~@fortawesome/fontawesome-free/scss/stacked';
+@import '~@fortawesome/fontawesome-free/scss/icons';
+//@import '~@fortawesome/fontawesome-free/scss/screen-reader';
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+//@import "~@fortawesome/fontawesome-free/scss/brands";
 
 // Magnific Popup
 @import "~magnific-popup/src/css/main";
+
+// Layout webu (custom layout)
+@import "components/global";
+@import "components/navbar-cart";
+@import "components/navbar-login";
+@import "components/navbar-horizontal";
+@import "components/section-category";

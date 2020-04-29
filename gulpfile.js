@@ -173,9 +173,10 @@ gulp.task('default:parallel', gulp.parallel(
 // Watcher
 gulp.task('watch', function () {
 
-    gulp.watch(
-        'assets/**/*',
-        gulp.series('default')
+    gulp.watch([
+            'assets/**/*',
+            'app/*/assets/**/*'
+        ], gulp.series('default')
     );
 
 });

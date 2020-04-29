@@ -8,5 +8,31 @@
 {/block}
 
 {block content}
-    <h1>Homepage Summary</h1>
+    {include './../../../Component/HorizontalNav/templates/horizontal-nav.latte'}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                {include './../../../Component/Filter/templates/filter.latte'}
+            </div>
+
+            <section class="col-md-8">
+                {include './../../../Component/BreadCrumb/templates/breadcrumb.latte'}
+
+                <h1 class="h2 mt-4">Asfaltové střechy</h1>
+
+                <div class="row">
+                    <div class="col-6 col-xl-4 mt-3" n:for="$i = 0; $i < 4; $i++">
+                        <a href="#" class="section-category p-3">
+                            <img src="//placehold.it/45x45" alt="Název kategorie" class="mr-2 img-fluid">
+                            <div>
+                                Další podkategorie <span class="text-dark small">(300)</span>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
 {/block}

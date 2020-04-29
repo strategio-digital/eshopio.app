@@ -41,7 +41,9 @@ module.exports = function ()
             './node_modules/bootstrap/js/dist/dropdown.js',
             './node_modules/bootstrap/js/dist/toast.js',
             //'./node_modules/bootstrap/js/dist/tooltip.js',
-            //'./node_modules/bootstrap/js/dist/tab.js',
+            './node_modules/bootstrap/js/dist/tab.js',
+
+            './assets/static/js/bootstrap.js',
 
             // Nette Ajax
             './node_modules/nette.ajax.js/nette.ajax.js',
@@ -75,7 +77,7 @@ module.exports = function ()
         scss:
         [
             // Zde načítat pouze tento zaváděcí soubor!
-            './assets/static/scss/backend.scss',
+            './assets/static/scss/frontend.scss',
         ]
 
     };
