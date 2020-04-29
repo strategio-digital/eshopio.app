@@ -59,15 +59,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     }
 
     /**
-     * Before Render
-     */
-    public function beforeRender()
-    {
-        parent::beforeRender();
-        $this->setLayout(__DIR__ . '/templates/@layout.latte');
-    }
-
-    /**
      * @throws Nette\Application\AbortException
      */
     public function handleLogout() : void

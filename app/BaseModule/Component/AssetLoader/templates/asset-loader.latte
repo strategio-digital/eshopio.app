@@ -3,5 +3,11 @@
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  *}
 
-<script src="{$basePath}/temp/static/js/{$currentFile}" n:if="$type === 'js'"></script>
-<link rel="stylesheet" type="text/css" href="{$basePath}/temp/static/css/{$currentFile}" n:if="$type === 'css'">
+{varType string $fileName}
+{varType string $fileNameHash}
+
+{if $fileName === 'backend-build.js' || $fileName === 'frontend-build.js'}
+    <script src="{$basePath}/temp/static/js/{$fileNameHash}"></script>
+{else}
+    <link rel="stylesheet" type="text/css" href="{$basePath}/temp/static/css/{$fileNameHash}">
+{/if}

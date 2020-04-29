@@ -11,4 +11,9 @@ use App\BaseModule\Presenter\BasePresenter;
 
 final class HomePresenter extends BasePresenter
 {
+    public function beforeRender()
+    {
+        parent::beforeRender();
+        $this->setLayout(__DIR__ . '/templates/@frontend.latte');
+    }
 }

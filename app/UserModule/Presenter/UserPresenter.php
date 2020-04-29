@@ -36,8 +36,8 @@ final class UserPresenter extends BasePresenter
     public IPasswordForm $IPasswordForm;
 
     /**
-     * Startup
      * @throws \Nette\Application\AbortException
+     * @throws \Nette\Application\UI\InvalidLinkException
      */
     public function startup() : void
     {
@@ -46,6 +46,15 @@ final class UserPresenter extends BasePresenter
         if (!$this->activeUser && !$this->isLinkCurrent(':User:User:login')) {
             $this->redirect(':User:User:login');
         }
+    }
+
+    /**
+     * Before render
+     */
+    public function beforeRender() : void
+    {
+        parent::beforeRender();
+        $this->setLayout(__DIR__ . '/../../BaseModule/Presenter/templates/@backend.latte');
     }
 
     /**

@@ -25,31 +25,14 @@ function gtag(){dataLayer.push(arguments);}
 */
 
 // HotJar
-(function(h,o,t,j,a,r){
+/*(function(h,o,t,j,a,r){
     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
     h._hjSettings={hjid:1726145,hjsv:6};
     a=o.getElementsByTagName('head')[0];
     r=o.createElement('script');r.async=1;
     r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
     a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-
-// Live Agent
-(function(d, src, c) {
-    var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');
-    s.id='la_x2s6df8d';s.async=true;s.src=src;
-    s.onload=s.onreadystatechange=function(){var rs=this.readyState;
-    if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};
-    t.parentElement.insertBefore(s,t.nextSibling);
-})(document, 'https://wakers.ladesk.com/scripts/track.js', function(e){ LiveAgent.createButton('zz5jigtg', e);});
-
-// Smart-Look
-/*window.smartlook||(function(d) {
-    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-    c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
-})(document);
-*/
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');*/
 
 
 // Smart-look init
@@ -59,7 +42,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 // Google Analytics init
-gtag('config', 'UA-53420713-27');
+//gtag('config', 'UA-53420713-27');
 
 // Google Ads init
 //gtag('config', 'AW-677388384');

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2019 Wakers.cz
+ * Copyright (c) 2020 Wakers.cz
  * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
  *
  * DŮLEŽITÉ:
@@ -15,6 +15,10 @@
 module.exports = function ()
 {
     return {
+
+        jsOnlyProduction: [
+            './assets/static/js/measurement.js',
+        ],
 
         js:
         [
@@ -36,11 +40,8 @@ module.exports = function ()
             //'./node_modules/bootstrap/js/dist/scrollspy.js',
             './node_modules/bootstrap/js/dist/dropdown.js',
             './node_modules/bootstrap/js/dist/toast.js',
-            './node_modules/bootstrap/js/dist/tooltip.js',
+            //'./node_modules/bootstrap/js/dist/tooltip.js',
             //'./node_modules/bootstrap/js/dist/tab.js',
-
-            // Bootstrap
-            './app/BaseModule/assets/js/bootstrap.js',
 
             // Nette Ajax
             './node_modules/nette.ajax.js/nette.ajax.js',
@@ -55,21 +56,6 @@ module.exports = function ()
             // Notification
             './app/BaseModule/assets/js/notification.js',
 
-            // Modal
-            './app/BaseModule/assets/js/modal.js',
-
-            // Tinymce,
-            './node_modules/tinymce/tinymce.js',
-            './node_modules/tinymce/themes/silver/theme.js',
-            './node_modules/tinymce/plugins/textcolor/plugin.js',
-            './node_modules/tinymce/plugins/lists/plugin.js',
-            './node_modules/tinymce/plugins/code/plugin.js',
-            './node_modules/tinymce/plugins/link/plugin.js',
-            './node_modules/tinymce/plugins/table/plugin.js',
-            './node_modules/tinymce/plugins/paste/plugin.js',
-            './app/BaseModule/assets/js/tinymce/cs.js',
-            './app/BaseModule/assets/js/tinymce/tinymce.js',
-
             // Magnific popup
             './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
             './app/BaseModule/assets/js/magnific-popup.js',
@@ -81,8 +67,8 @@ module.exports = function ()
         file:
         [
             { from: './assets/static/img/**/*', to: '/img' },
-            { from: './node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.*', to: '/font' },
-            { from: './node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.*', to: '/font' },
+            //{ from: './node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.*', to: '/font' },
+            //{ from: './node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.*', to: '/font' },
             //{ from: './node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.*', to: '/font' }
         ],
 

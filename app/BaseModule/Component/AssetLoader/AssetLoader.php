@@ -17,14 +17,6 @@ class AssetLoader extends Control
      */
     const MANIFEST_PATH = __DIR__ . '/../../../../www/temp/static/manifest.json';
 
-    /*
-     * FileNames
-     */
-    const FILE_NAME = [
-        'js' => 'backend-build.js',
-        'css' => 'backend-build.css'
-    ];
-
     /**
      * @var array<string>
      */
@@ -41,15 +33,13 @@ class AssetLoader extends Control
     }
 
     /**
-     * @param string $type
+     * @param string $fileName
      */
-    public function render(string $type = 'js') : void
+    public function render(string $fileName = 'backend-build.css') : void
     {
-        $fileName = self::FILE_NAME[$type];
-
         $this->template->render(__DIR__ . '/templates/asset-loader.latte', [
-            'type' => $type,
-            'currentFile' => $this->json[$fileName]
+            'fileName' => $fileName,
+            'fileNameHash' => $this->json[$fileName]
         ]);
     }
 }

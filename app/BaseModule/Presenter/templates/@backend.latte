@@ -8,12 +8,12 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>E-shopio.app</title>
+    <title>{ifset title}{include title}{/ifset}</title>
 
     <link rel="shortcut icon" href="{$baseUrl}/favicon.ico">
 
     {block head}
-        {control assetLoader 'css'}
+        {control assetLoader 'backend-build.css'}
     {/block}
 </head>
 <body class="h-100 position-relative">
@@ -21,7 +21,7 @@
     {include content}
 
 	{block scripts}
-        {control assetLoader 'js'}
+        {control assetLoader 'backend-build.js'}
 	{/block}
 
     {* Flash Notifications & Ajax notifications *}

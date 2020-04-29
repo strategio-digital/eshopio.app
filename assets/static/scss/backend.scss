@@ -11,7 +11,7 @@
 // Node - Bootstrap
 @import "~bootstrap/scss/functions";
 //@import "~bootstrap/scss/variables";
-@import "vendor/bootstrap/variables";
+@import "app/BaseModule/assets/scss/vendor/bootstrap/variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
@@ -49,13 +49,13 @@
 //@import "~bootstrap/scss/print";
 
 // Layout webu (custom layout)
-@import "components/global";
-@import "components/navbar";
-@import "components/button";
-@import "components/form";
-@import "components/custom-select";
-@import "components/toast-container";
-@import "components/table";
+@import "app/BaseModule/assets/scss/components/global";
+@import "app/BaseModule/assets/scss/components/navbar";
+@import "app/BaseModule/assets/scss/components/button";
+@import "app/BaseModule/assets/scss/components/form";
+@import "app/BaseModule/assets/scss/components/custom-select";
+@import "app/BaseModule/assets/scss/components/toast-container";
+@import "app/BaseModule/assets/scss/components/table";
 
 // Magnific Popup
 @import "~magnific-popup/src/css/main";
@@ -78,5 +78,5 @@
 @import "~@fortawesome/fontawesome-free/scss/regular";
 //@import "~@fortawesome/fontawesome-free/scss/brands";
 
-@import "vendor/tinymce/skin";
-@import "vendor/tinymce/tinymce";
+@import "app/BaseModule/assets/scss/vendor/tinymce/skin";
+@import "app/BaseModule/assets/scss/vendor/tinymce/tinymce";
