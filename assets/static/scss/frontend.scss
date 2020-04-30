@@ -10,7 +10,8 @@
 
 // Node - Bootstrap
 @import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
+//@import "~bootstrap/scss/variables";
+@import "vendor/bootstrap/variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
@@ -74,3 +75,4 @@
 @import "components/navbar-login";
 @import "components/navbar-horizontal";
 @import "components/section-category";
+@import "components/product-grid";

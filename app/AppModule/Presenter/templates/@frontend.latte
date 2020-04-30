@@ -22,6 +22,18 @@
 
     {include content}
 
+    {include './../../Component/Newsletter/templates/newsletter.latte'}
+
+    {include './../../Component/Footer/templates/footer.latte'}
+
+    <div class="bg-danger py-2">
+        <div class="container">
+            <a href="https://www.strategio.dev" class="text-white small">
+                &copy; 2020 Eshopy a výkonnostní marketing
+            </a>
+        </div>
+    </div>
+
 	{block scripts}
         {control assetLoader 'frontend-build.js'}
 	{/block}
