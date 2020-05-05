@@ -1,0 +1,18 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div class="container">
+    <h2 class="">Hlavní kategorie produktů</h2>
+    <div class="row">
+        <div class="col-6 col-md-4 col-xxl-3" n:for="$i = 0; $i < 8; $i++">
+            <a class="d-block text-dark mt-4" href="{plink :App:Category:summary}">
+                <img src="//placehold.it/400x300/eee" alt="" class="img-fluid">
+                <h2 class="bg-light h5 p-3 text-center mb-0">
+                    Název hl. kategorie
+                </h2>
+            </a>
+        </div>
+    </div>
+</div>

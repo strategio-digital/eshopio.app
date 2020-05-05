@@ -1,0 +1,35 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div class="container py-5">
+    <h2 class="mt-5">Poslední hodnocení</h2>
+    <div class="row">
+        <div class="col-lg-6 mt-4" n:for="$i = 0; $i < 8; $i++">
+            <div class="d-flex align-items-center">
+                <a href="#" class="d-block mr-4">
+                    <img src="//placehold.it/165x120/eee" alt="">
+                </a>
+                <div class="small">
+                    <a href="#" class="d-block text-dark">
+                        <h2 class="h6 font-weight-bold mb-0">Název produktu</h2>
+                    </a>
+
+                    <div class="my-2 text-dark">
+                        <div class="d-inline-block mr-2">
+                            <i class="fas fa-star text-warning" n:for="$s = 0; $s < 5; $s++"></i>
+                        </div>
+                        <div class="d-inline-block font-weight-bold">
+                            <span>Jméno a příjmení</span>
+                            <span class="mx-2">|</span>
+                            <span>5.5.2020</span>
+                        </div>
+                    </div>
+
+                    <p class="text-dark mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque facilis nostrum rem suscipit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,31 +4,22 @@
  *}
 
 {block title}
-    Úvodní stránka e-shopu
+    Úvodní stránka
 {/block}
 
 {block content}
     {include './../../../Component/HorizontalNav/templates/horizontal-nav.latte'}
 
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-lg-3">
-                {include './../../../Component/Filter/templates/filter.latte'}
-            </div>
+    {include './../../../Component/Discount/templates/discount.latte'}
 
-            <section class="col-lg-9">
-                {include './../../../Component/BreadCrumb/templates/breadcrumb.latte'}
-
-                <h1 class="h2 mt-4">Asfaltové střechy</h1>
-
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet commodi cupiditate doloribus
-                    earum enim esse facere ipsam iure laboriosam laudantium possimus provident quae recusandae rem,
-                    tempora ut? Vel, vero.</p>
-
-                {include './../../../Component/SectionCategory/templates/section-category.latte'}
-
-                {include './../../../Component/ProductGrid/templates/product-grid.latte'}
-            </section>
+    <div class="bg-white py-5">
+        <div class="container">
+            <h2 class="p-0">Vybrané produkty</h2>
+            {include './../../../Component/ProductGrid/templates/summary.latte', 'count' => 6, 'container' => 'p-0'}
         </div>
     </div>
+
+    {include './../../../Component/Category/templates/category.latte'}
+
+    {include './../../../Component/Review/templates/review.latte'}
 {/block}

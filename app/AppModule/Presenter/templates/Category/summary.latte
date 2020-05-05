@@ -1,0 +1,36 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{block title}
+    Kategorie produktů
+{/block}
+
+{block content}
+    {include './../../../Component/HorizontalNav/templates/horizontal-nav.latte'}
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-3">
+                {include './../../../Component/Filter/templates/filter.latte'}
+            </div>
+
+            <section class="col-lg-9">
+                {include './../../../Component/BreadCrumb/templates/breadcrumb.latte'}
+
+                <h1 class="h2 mt-4">Asfaltové střechy</h1>
+
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet commodi cupiditate doloribus
+                    earum enim esse facere ipsam iure laboriosam laudantium possimus provident quae recusandae rem,
+                    tempora ut? Vel, vero.</p>
+
+                {include './../../../Component/SectionCategory/templates/section-category.latte'}
+
+                {include './../../../Component/ProductGrid/templates/tabs.latte'}
+                {include './../../../Component/ProductGrid/templates/summary.latte', 'count' => 8, 'container' => 'p-0'}
+                {include './../../../Component/ProductGrid/templates/paginator.latte'}
+            </section>
+        </div>
+    </div>
+{/block}

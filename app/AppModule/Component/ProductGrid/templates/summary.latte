@@ -1,0 +1,43 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+<div class="container my-4 {ifset $container}{$container}{/ifset}">
+    <div class="row product-grid">
+        <div class="col-md-6 col-xl-4 grid-item" n:for="$i = 1; $i <= $count; $i++">
+            <article class="bg-white">
+                <a href="#" class="d-block position-relative p-4">
+                    <div class="small text-warning position-absolute" style="left: 2rem; top: 2rem">
+                        <i class="fas fa-star" n:for="$s = 0; $s < 5; $s++"></i>
+                    </div>
+                    <img src="//placehold.it/550x400/eee" alt="" class="img-fluid">
+                </a>
+
+                <div class="pt-0 px-4 ">
+                    <a href="#" class="d-block text-dark">
+                        <h2 class="h6 font-weight-bold">Název produktu</h2>
+                    </a>
+                    <p class="small text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque facilis nostrum rem suscipit. Aliquid cumque deserunt in incidunt.</p>
+                </div>
+
+                <div class="px-4 pb-4 d-flex align-items-center justify-content-between">
+                    <div class="">
+                        <div>
+                            <del class="small">232 344 Kč</del>
+                            <div class="h6 text-danger font-weight-bold">132 145 Kč</div>
+                        </div>
+                        <div class="text-success small font-weight-bold">Skladem</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-cart-plus mr-2"></i>
+                            Do košíku
+                        </button>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </div>
+</div>
