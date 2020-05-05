@@ -21,7 +21,9 @@
         &.active {
           background-color: $white;
           color: $danger;
-          box-shadow: 0 -3px 4px 0 lighten($danger, 30%);
+          @include media-breakpoint-up(lg) {
+            box-shadow: 0 -3px 4px 0 lighten($danger, 30%);
+          }
         }
       }
     }
