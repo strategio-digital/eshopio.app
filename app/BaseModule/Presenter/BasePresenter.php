@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace App\BaseModule\Presenter;
 
+use App\AppModule\Component\BreadCrumb\BreadCrumbComponent;
 use App\BaseModule\Component\AssetLoader\AssetLoader;
 use App\BaseModule\Component\Navbar\Navbar;
 use App\BaseModule\Component\Notification\Entity\Notification;
@@ -25,9 +26,9 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     use TBasePresenter;
 
     /**
-     * @var array<Notification>
+     * @var User|null
      */
-    public array $notifications = [];
+    public ?User $activeUser = NULL;
 
     /**
      * @var NetteUser
@@ -42,9 +43,14 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     public UserRepository $userRepository;
 
     /**
-     * @var User|null
+     * @var BreadCrumbComponent
      */
-    public ?User $activeUser = NULL;
+    protected BreadCrumbComponent $breadCrumbComponent;
+
+    /**
+     * @var array<Notification>
+     */
+    protected array $notifications = [];
 
     /**
      * Startup
@@ -52,6 +58,8 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     public function startup() : void
     {
         parent::startup();
+
+        $this->breadCrumbComponent = new BreadCrumbComponent;
 
         if ($this->netteUser->isLoggedIn()) {
             $this->activeUser = $this->userRepository->findOneById($this->netteUser->getId());
@@ -72,7 +80,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     /**
      * @return AssetLoader
-     * @throws Nette\Utils\JsonException
      */
     protected function createComponentAssetLoader() : AssetLoader
     {
@@ -85,5 +92,13 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
     protected function createComponentNavbar() : Navbar
     {
         return new Navbar;
+    }
+
+    /**
+     * @return BreadCrumbComponent
+     */
+    protected function createComponentBreadCrumb() : BreadCrumbComponent
+    {
+        return $this->breadCrumbComponent;
     }
 }
