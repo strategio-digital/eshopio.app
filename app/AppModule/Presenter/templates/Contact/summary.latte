@@ -1,0 +1,32 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{block title}
+    Kontakty
+{/block}
+
+{block content}
+    {include './../../../Component/HorizontalNav/templates/horizontal-nav.latte', []}
+
+    <div class="container mt-4">
+        <section>
+            {control breadCrumb}
+
+            <h1 class="h2 mt-4">Kontakty</h1>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, itaque, veniam? Aperiam at maxime nisi perspiciatis quisquam! Assumenda aut corporis exercitationem facilis id illum iusto, nulla placeat porro quasi, reprehenderit.</p>
+
+            <div class="row d-flex align-items-center">
+                <div class="col-md-6">
+                    {include './../../../Component/ContactInfo/templates/contact-info.latte'}
+                </div>
+
+                <div class="col-md-6">
+                    {include './../../../Component/ContactForm/templates/contact-form.latte'}
+                </div>
+            </div>
+
+        </section>
+    </div>
+{/block}
