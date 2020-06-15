@@ -12,10 +12,10 @@ use Latte\Engine;
 
 /**
  * Trait TBasePresenter
- * @property BasePresenter $presenter
+ * @property AbstractPresenter $presenter
  * @property Engine $template
  */
-trait TBasePresenter
+trait TAbstractPresenter
 {
     /**
      * @param string $type

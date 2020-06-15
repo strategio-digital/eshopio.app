@@ -9,7 +9,7 @@ namespace App\BaseModule\Presenter;
 
 use Nette;
 
-final class Error4xxPresenter extends BasePresenter
+final class Error4xxPresenter extends AbstractPresenter
 {
 	public function startup(): void
 	{

@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 namespace App\UserModule\Presenter;
 
-use App\BaseModule\Presenter\BasePresenter;
+use App\BaseModule\Presenter\AbstractPresenter;
 use App\UserModule\Component\User\LoginForm\ILoginForm;
 use App\UserModule\Component\User\LoginForm\LoginForm;
 use App\UserModule\Component\User\NameForm\INameForm;
@@ -15,7 +15,7 @@ use App\UserModule\Component\User\NameForm\NameForm;
 use App\UserModule\Component\User\PasswordForm\IPasswordForm;
 use App\UserModule\Component\User\PasswordForm\PasswordForm;
 
-final class UserPresenter extends BasePresenter
+final class UserPresenter extends AbstractPresenter
 {
     /**
      * @var ILoginForm

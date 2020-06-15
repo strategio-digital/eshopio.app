@@ -7,13 +7,9 @@ declare(strict_types=1);
 
 namespace App\AppModule\Presenter;
 
-use App\BaseModule\Presenter\BasePresenter;
+use App\BaseModule\Presenter\FrontendPresenter;
 
-final class HomePresenter extends BasePresenter
+final class HomePresenter extends FrontendPresenter
 {
-    public function beforeRender()
-    {
-        parent::beforeRender();
-        $this->setLayout(__DIR__ . '/templates/@frontend.latte');
-    }
+
 }

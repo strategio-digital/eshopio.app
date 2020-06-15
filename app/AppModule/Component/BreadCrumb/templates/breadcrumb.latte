@@ -16,7 +16,7 @@
 
         {foreach $breadCrumbItems as $breadCrumbItem}
             <li class="breadcrumb-item {if $iterator->isLast()}active{/if}">
-                {if $iterator->isLast()}
+                {if $iterator->isLast() || $breadCrumbItem->getLink() === NULL}
                     {$breadCrumbItem->getName()}
                 {else}
                     <a href="{plink $breadCrumbItem->getLink()}">{$breadCrumbItem->getName()}</a>

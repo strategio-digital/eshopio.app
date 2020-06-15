@@ -11,16 +11,15 @@ use App\AppModule\Component\BreadCrumb\Entity\BreadCrumbItem;
 use App\BaseModule\Presenter\FrontendPresenter;
 use Doctrine\Common\Collections\ArrayCollection;
 
-final class ContactPresenter extends FrontendPresenter
+class ArticlePresenter extends FrontendPresenter
 {
     public function beforeRender()
     {
         parent::beforeRender();
 
-        $breadCrumbItems = new ArrayCollection([
-            new BreadCrumbItem('Kontakty', 'Contact:summary')
-        ]);
-
-        $this->breadCrumbComponent->setBreadCrumbItems($breadCrumbItems);
+        $this->breadCrumbComponent->setBreadCrumbItems(new ArrayCollection([
+            //new BreadCrumbItem('Články', NULL),
+            new BreadCrumbItem('Název článku', 'Article:detail')
+        ]));
     }
 }

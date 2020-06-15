@@ -8,13 +8,13 @@ declare(strict_types=1);
 namespace App\BaseModule\Component;
 
 use App\BaseModule\Component\Notification\Entity\Notification;
-use App\BaseModule\Presenter\BasePresenter;
+use App\BaseModule\Presenter\AbstractPresenter;
 use Nette\Application\UI\Form;
 
 /**
  * Trait FormValidation
  * @package App\Component
- * @property BasePresenter $presenter
+ * @property AbstractPresenter $presenter
  */
 trait FormDisplayError
 {

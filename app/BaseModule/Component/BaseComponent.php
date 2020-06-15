@@ -7,16 +7,16 @@ declare(strict_types=1);
 
 namespace App\BaseModule\Component;
 
-use App\BaseModule\Presenter\BasePresenter;
-use App\BaseModule\Presenter\TBasePresenter;
+use App\BaseModule\Presenter\AbstractPresenter;
+use App\BaseModule\Presenter\TAbstractPresenter;
 use Nette\Application\UI\Control;
 
 /**
  * Class BaseComponent
  * @package App\Component
- * @property BasePresenter $presenter
+ * @property AbstractPresenter $presenter
  */
 class BaseComponent extends Control
 {
-    use TBasePresenter;
+    use TAbstractPresenter;
 }

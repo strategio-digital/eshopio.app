@@ -18,14 +18,14 @@ class BreadCrumbItem
     /**
      * @var string
      */
-    protected string $link;
+    protected ?string $link;
 
     /**
      * BreadCrumbItem constructor.
      * @param string $name
-     * @param string $link
+     * @param string|null $link
      */
-    public function __construct(string $name, string $link)
+    public function __construct(string $name, ?string $link)
     {
         $this->name = $name;
         $this->link = $link;
@@ -40,9 +40,9 @@ class BreadCrumbItem
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLink() : string
+    public function getLink() : ?string
     {
         return $this->link;
     }
