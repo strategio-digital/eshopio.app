@@ -30,4 +30,13 @@ final class UserPresenter extends FrontendPresenter
 
         $this->breadCrumb->setBreadCrumbItems($breadCrumbItems);
     }
+
+    public function actionPasswordUpdate() : void
+    {
+        $breadCrumbItems = new ArrayCollection([
+            new BreadCrumbItem('Nastavení nového hesla', ':User:User:register')
+        ]);
+
+        $this->breadCrumb->setBreadCrumbItems($breadCrumbItems);
+    }
 }
