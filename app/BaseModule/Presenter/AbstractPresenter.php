@@ -43,7 +43,7 @@ abstract class AbstractPresenter extends Nette\Application\UI\Presenter
     /**
      * @var array<Notification>
      */
-    protected array $notifications = [];
+    public array $notifications = [];
 
     /**
      * Startup

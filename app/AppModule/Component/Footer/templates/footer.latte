@@ -17,45 +17,25 @@
                 </div>
                 <ul class="list-unstyled">
                     <li class="mb-2">
-                        <a href="{plink :App:Article:detail}" class="text-white">Jak nakupovat</a>
+                        <a href="{plink :Article:Article:detail}" class="text-white">Jak nakupovat</a>
                     </li>
                     <li class="mb-2">
-                        <a href="{plink :App:Article:detail}" class="text-white">Obchodní podmínky</a>
+                        <a href="{plink :Article:Article:detail}" class="text-white">Obchodní podmínky</a>
                     </li>
                     <li class="mb-2">
-                        <a href="{plink :App:Article:detail}" class="text-white">Ochrana osobních údajů</a>
+                        <a href="{plink :Article:Article:detail}" class="text-white">Ochrana osobních údajů</a>
                     </li>
                     <li class="mb-2">
-                        <a href="{plink :App:Article:detail}" class="text-white">O nás - eshopio.app</a>
+                        <a href="{plink :Article:Article:detail}" class="text-white">O nás - eshopio.app</a>
                     </li>
                     <li class="mb-2">
-                        <a href="{plink :App:Contact:summary}" class="text-white">Kontaky / Kontaktní formulář</a>
+                        <a href="{plink :Contact:Contact:summary}" class="text-white">Kontaky / Kontaktní formulář</a>
                     </li>
                 </ul>
             </div>
 
             <div class="col-md-6 col-lg-4 col-xl-3 mt-5">
-                <div class="h4 mb-3">
-                    Kontakty
-                </div>
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <a href="#" class="text-white" target="_blank">
-                            <i class="fas fa-phone mr-2"></i>
-                            +420 123 456 789
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="#" class="text-white" target="_blank">
-                            <i class="fas fa-envelope mr-2"></i>
-                            info@eshopio.app
-                        </a>
-                    </li>
-                    <li class="mb-2 d-flex align-items-baseline">
-                        <i class="fas fa-map-marker-alt mr-3"></i>
-                        Suchovrbenské náměstí&nbsp;2724, České&nbsp;Budějovice 370&nbsp;01
-                    </li>
-                </ul>
+                {include './../../../../ContactModule/Component/FooterContact/templates/footer-contact.latte'}
             </div>
 
             <div class="col-md-6 col-lg-12 col-xl-3 mt-5">

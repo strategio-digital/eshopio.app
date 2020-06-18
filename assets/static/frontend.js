@@ -52,7 +52,7 @@ module.exports = function ()
             './app/BaseModule/assets/js/button-ajax.js',
 
             // Nette Live validation
-            './app/BaseModule/assets/js/live-validation.js',
+            './assets/static/js/live-validation.js',
             './node_modules/live-form-validation/live-form-validation.js',
 
             // Notification

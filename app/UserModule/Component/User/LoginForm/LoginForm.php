@@ -41,11 +41,19 @@ class LoginForm extends BaseComponent
     }
 
     /**
-     * Render
+     * Render classic Form
      */
     public function render() : void
     {
         $this->template->render(__DIR__ . '/templates/login-form.latte');
+    }
+
+    /**
+     * Render DropDown form
+     */
+    public function renderDropdown() : void
+    {
+        $this->template->render(__DIR__ . '/templates/login-dropdown.latte');
     }
 
     /**
@@ -76,7 +84,8 @@ class LoginForm extends BaseComponent
                 $this->presenter->redirect(':User:User:profile');
 
             } catch (AuthenticationException $exception) {
-                $this->notification(Notification::DANGER, 'Přihlášení', $exception->getMessage(), 3000);
+                bdump('yep');
+                $this->notification(Notification::DANGER, 'Přihlášení', $exception->getMessage(), 3000, TRUE);
             }
         };
 

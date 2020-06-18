@@ -39,7 +39,7 @@ class BreadCrumb extends Control
      */
     public function render() : void
     {
-        $this->template->render(__DIR__ . '/templates/breadcrumb.latte', [
+        $this->template->render(__DIR__ . '/templates/bread-crumb.latte', [
             'breadCrumbItems' => $this->breadCrumbItems
         ]);
     }

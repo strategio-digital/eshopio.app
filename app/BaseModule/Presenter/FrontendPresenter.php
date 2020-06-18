@@ -8,7 +8,8 @@ declare(strict_types=1);
 namespace App\BaseModule\Presenter;
 
 use App\AppModule\Component\BreadCrumb\BreadCrumb;
-use App\BaseModule\Component\Navbar\Navbar;
+use App\UserModule\Component\User\LoginForm\ILoginForm;
+use App\UserModule\Component\User\LoginForm\LoginForm;
 
 abstract class FrontendPresenter extends AbstractPresenter
 {
@@ -16,6 +17,12 @@ abstract class FrontendPresenter extends AbstractPresenter
      * @var BreadCrumb
      */
     public BreadCrumb $breadCrumb;
+
+    /**
+     * @var ILoginForm
+     * @inject
+     */
+    public ILoginForm $ILoginForm;
 
     /**
      * Startup
@@ -28,18 +35,18 @@ abstract class FrontendPresenter extends AbstractPresenter
     }
 
     /**
-     * @return Navbar
-     */
-    protected function createComponentNavbar() : Navbar
-    {
-        return new Navbar;
-    }
-
-    /**
      * @return BreadCrumb
      */
     protected function createComponentBreadCrumb() : BreadCrumb
     {
         return $this->breadCrumb;
+    }
+
+    /**
+     * @return LoginForm
+     */
+    protected function createComponentUserLoginForm() : LoginForm
+    {
+        return $this->ILoginForm->create();
     }
 }

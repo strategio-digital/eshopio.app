@@ -35,6 +35,7 @@ trait TAbstractPresenter
         ]);
 
         if ($sendPayload) {
+            bdump('yep');
             $this->presenter->sendPayload();
         }
     }

@@ -25,8 +25,8 @@ final class RouterFactory
         ]);*/
 
         $router->addRoute('/<module>/<presenter>/<action>[/<url .*>]', [
-            'module' => 'App',
-            'presenter' => 'Home',
+            'module' => 'Homepage',
+            'presenter' => 'Homepage',
             'action' => 'summary'
         ]);
 
