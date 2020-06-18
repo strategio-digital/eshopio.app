@@ -3,25 +3,27 @@
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  *}
 
-{block title}
-    Profil uživatele
-{/block}
+{varType App\BaseModule\Presenter\FrontendPresenter $presenter}
 
 {block content}
-    <nav class="container text-right pt-3">
-        <a href="{plink Logout!}" class="btn btn-primary">
-            Odhlásit se
-        </a>
-    </nav>
 
-    <section class="container">
+<div class="container mt-4">
+    <section class="mb-5">
+
+        {control breadCrumb}
+
+        <h1 class="mt-4">
+            {$presenter->breadCrumb->getLastBreadCrumbItem()->getName()}
+        </h1>
+
         <div class="row">
-            <div class="col-lg-6 mt-3">
-                {control userNameForm}
-            </div>
-            <div class="col-lg-6 mt-3">
-                {control userPasswordForm}
+            <div class="col-md-12 col-lg-8 col-xl-6 mt-4">
+                <div class="p-4 p-md-5 bg-light">
+                    <a href="{plink Logout!}" class="btn btn-primary">
+                        Odhlásit se
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-{/block}
+</div>

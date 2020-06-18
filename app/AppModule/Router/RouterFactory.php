@@ -14,26 +14,28 @@ final class RouterFactory
 {
 	use Nette\StaticClass;
 
+	protected static $modules = [
+	    'dashboard'
+    ];
+
 	public static function createRouter(): RouteList
 	{
 		$router = new RouteList;
 
-        /*$router->addRoute('/site-manager/<module>/<presenter>/<action>', [
-            'module' => 'User',
-            'presenter' => 'User',
-            'action' => 'login'
-        ]);*/
+		foreach (self::$modules as $module) {
+		    $uModule = ucfirst($module);
+            $router->addRoute("/site-manager/{$module}/<presenter>/<action>[/<id \d+>]", [
+                'module' => $uModule,
+                'presenter' => $uModule,
+                'action' => 'summary'
+            ]);
+        }
 
         $router->addRoute('/<module>/<presenter>/<action>[/<url .*>]', [
             'module' => 'Homepage',
             'presenter' => 'Homepage',
             'action' => 'summary'
         ]);
-
-        /*$router->addRoute('/<url .*>', [
-            'presenter' => 'Home',
-            'action' => 'summary'
-        ]);*/
 
 		return $router;
 	}

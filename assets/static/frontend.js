@@ -58,6 +58,9 @@ module.exports = function ()
             // Notification
             './app/BaseModule/assets/js/notification.js',
 
+            // Dropdown
+            './app/BaseModule/assets/js/dropdown.js',
+
             // Magnific popup
             './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
             './app/BaseModule/assets/js/magnific-popup.js',

@@ -25,18 +25,6 @@ session:
 services:
     # Mailer
     mail.mailer: App\BaseModule\Mailer\Error\TracyMailer(%SMTP_HOST%, %SMTP_PASSWORD%, %SMTP_USERNAME%, %MAIL_ADMIN_NAME%, %MAIL_ADMIN_EMAIL%, %DOMAIN_URL%)
-    - App\UserModule\Mailer\User\UserMailer(%SMTP_HOST%, %SMTP_PASSWORD%, %SMTP_USERNAME%, %MAIL_ADMIN_NAME%, %MAIL_ADMIN_EMAIL%, %DOMAIN_URL%)
-
-    # User
-    - App\UserModule\Database\Manager\UserManager
-    - App\UserModule\Database\Repository\UserRepository
-    - App\UserModule\Component\User\LoginForm\ILoginForm
-    - App\UserModule\Component\User\NameForm\INameForm
-    - App\UserModule\Component\User\PasswordForm\IPasswordForm
-    authenticator: App\UserModule\Security\Authenticator
-    commands.createUser:
-        class: App\UserModule\Console\CreateUserCommand
-        tags: [console.command: wakers:create-user]
 
     # Router
     router: App\AppModule\Router\RouterFactory::createRouter
@@ -50,3 +38,5 @@ extensions:
 
 includes:
     - ./../../../vendor/phpstan/phpstan-nette/extension.neon
+
+    - ./../../UserModule/config/user.module.neon

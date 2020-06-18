@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace App\UserModule\Component\User\LoginForm;
+namespace App\UserModule\Component\LoginForm;
 
 use App\BaseModule\Component\BaseComponent;
 use App\BaseModule\Component\FormDisplayError;
@@ -81,10 +81,9 @@ class LoginForm extends BaseComponent
                 $this->user->login($identity);
 
                 $this->notificationFlash(Notification::SUCCESS, 'Přihlášení', 'Přihlášení proběhlo v pořádku', 3000);
-                $this->presenter->redirect(':User:User:profile');
+                $this->presenter->redirect('this');
 
             } catch (AuthenticationException $exception) {
-                bdump('yep');
                 $this->notification(Notification::DANGER, 'Přihlášení', $exception->getMessage(), 3000, TRUE);
             }
         };

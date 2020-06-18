@@ -1,0 +1,14 @@
+services:
+    - App\UserModule\Mailer\User\UserMailer(%SMTP_HOST%, %SMTP_PASSWORD%, %SMTP_USERNAME%, %MAIL_ADMIN_NAME%, %MAIL_ADMIN_EMAIL%, %DOMAIN_URL%)
+
+    - App\UserModule\Database\Manager\UserManager
+
+    - App\UserModule\Database\Repository\UserRepository
+
+    - App\UserModule\Component\LoginForm\ILoginForm
+    - App\UserModule\Component\DropdownProfile\IDropDownProfile
+
+    authenticator: App\UserModule\Security\Authenticator
+    commands.createUser:
+        class: App\UserModule\Console\CreateUserCommand
+        tags: [console.command: wakers:create-user]

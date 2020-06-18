@@ -8,8 +8,10 @@ declare(strict_types=1);
 namespace App\BaseModule\Presenter;
 
 use App\AppModule\Component\BreadCrumb\BreadCrumb;
-use App\UserModule\Component\User\LoginForm\ILoginForm;
-use App\UserModule\Component\User\LoginForm\LoginForm;
+use App\UserModule\Component\DropdownProfile\DropdownProfile;
+use App\UserModule\Component\DropdownProfile\IDropDownProfile;
+use App\UserModule\Component\LoginForm\ILoginForm;
+use App\UserModule\Component\LoginForm\LoginForm;
 
 abstract class FrontendPresenter extends AbstractPresenter
 {
@@ -23,6 +25,12 @@ abstract class FrontendPresenter extends AbstractPresenter
      * @inject
      */
     public ILoginForm $ILoginForm;
+
+    /**
+     * @var IDropDownProfile
+     * @inject
+     */
+    public IDropDownProfile $IDropdownProfile;
 
     /**
      * Startup
@@ -48,5 +56,13 @@ abstract class FrontendPresenter extends AbstractPresenter
     protected function createComponentUserLoginForm() : LoginForm
     {
         return $this->ILoginForm->create();
+    }
+
+    /**
+     * @return DropdownProfile
+     */
+    protected function createComponentUserDropdownProfile() : DropdownProfile
+    {
+        return $this->IDropdownProfile->create();
     }
 }

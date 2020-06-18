@@ -22,7 +22,7 @@
 
             <div class="col-md-5 d-flex align-items-center justify-content-end">
                 {if $user->isLoggedIn()}
-
+                    {control userDropdownProfile}
                 {else}
                     {control userLoginForm:dropdown}
                 {/if}

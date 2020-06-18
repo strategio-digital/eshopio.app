@@ -1,0 +1,30 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType App\UserModule\Presenter\UserPresenter $presenter}
+
+<div class="dropdown">
+    <a href="{plink :User:User:profile}" class="mr-4" id="{$control->getName()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user mr-1"></i>
+        Váš účet<br>
+        <span class="small text-dark">{$presenter->activeUser->getEmail()}</span>
+    </a>
+    <div class="dropdown-menu navbar-login" aria-labelledby="{$control->getName()}">
+        <div class="h5 mb-1 font-weight-bold">Váš účet</div>
+        <div class="mb-3 small">
+            <span n:ifcontent>{$presenter->activeUser->getFirstName()} {$presenter->activeUser->getLastName()}<br></span>
+            {$presenter->activeUser->getEmail()}
+        </div>
+
+        <ol class="list-unstyled mb-3">
+            <li><a href="{plink :User:User:orderSummary}">Přehled objednávek</a></li>
+            <li><a href="{plink :User:User:profile}">Nastavení účtu</a></li>
+        </ol>
+
+        <a href="{plink Logout!}" class="btn btn-primary mr-3">
+            Odhlásit se
+        </a>
+    </div>
+</div>

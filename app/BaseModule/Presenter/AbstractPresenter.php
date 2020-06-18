@@ -52,6 +52,8 @@ abstract class AbstractPresenter extends Nette\Application\UI\Presenter
     {
         parent::startup();
 
+        $this->setLayout(__DIR__ . '/templates/@backend.latte');
+
         if ($this->netteUser->isLoggedIn()) {
             $this->activeUser = $this->userRepository->findOneById($this->netteUser->getId());
         }

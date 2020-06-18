@@ -5,12 +5,12 @@
  */
 declare(strict_types=1);
 
-namespace App\UserModule\Component\User\LoginForm;
+namespace App\UserModule\Component\DropdownProfile;
 
-interface ILoginForm
+interface IDropDownProfile
 {
     /**
-     * @return LoginForm
+     * @return DropdownProfile
      */
-    public function create() : LoginForm;
+    public function create() : DropdownProfile;
 }
