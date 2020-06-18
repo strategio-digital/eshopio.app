@@ -72,8 +72,11 @@
 // Layout webu (custom layout)
 @import "components/global";
 @import "components/toast-container";
-@import "components/navbar-cart";
-@import "components/navbar-login";
 @import "components/navbar-horizontal";
+@import "components/navbar-cart";
+
+@import "components/dropdown-profile";
+@import "components/dropdown-login";
+
 @import "components/section-category";
 @import "components/product-grid";

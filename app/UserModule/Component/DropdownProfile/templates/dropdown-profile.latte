@@ -5,17 +5,22 @@
 
 {varType App\UserModule\Presenter\UserPresenter $presenter}
 
-<div class="dropdown">
-    <a href="{plink :User:User:profile}" class="mr-4" id="{$control->getName()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-user mr-1"></i>
-        Váš účet<br>
+<div class="dropdown dropdown-profile">
+    <a href="{plink :User:User:profile}" class="mr-4 link" id="{$control->getName()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span><i class="fas fa-user mr-1"></i>Váš účet</span><br>
         <span class="small text-dark">{$presenter->activeUser->getEmail()}</span>
     </a>
-    <div class="dropdown-menu navbar-login" aria-labelledby="{$control->getName()}">
-        <div class="h5 mb-1 font-weight-bold">Váš účet</div>
-        <div class="mb-3 small">
-            <span n:ifcontent>{$presenter->activeUser->getFirstName()} {$presenter->activeUser->getLastName()}<br></span>
-            {$presenter->activeUser->getEmail()}
+    <div class="dropdown-menu" aria-labelledby="{$control->getName()}">
+
+        <div class="d-flex align-items-start">
+            <img src="//placehold.it/64x64&text=JZ" alt="Váš profil" class="d-block">
+            <div class="ml-3 mb-3">
+                <div class="h5 mb-1 font-weight-bold">Váš účet</div>
+                <div class="small">
+                    <span n:ifcontent>{$presenter->activeUser->getFirstName()} {$presenter->activeUser->getLastName()}<br></span>
+                    {$presenter->activeUser->getEmail()}
+                </div>
+            </div>
         </div>
 
         <ol class="list-unstyled mb-3">
