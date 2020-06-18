@@ -14,12 +14,23 @@
 
     <div class="bg-white py-5">
         <div class="container">
-            <h2 class="p-0">Vybrané produkty</h2>
-            {include './../../../Component/ProductGrid/templates/summary.latte', 'count' => 6, 'container' => 'p-0'}
+            <div class="h2 p-0">Vybrané produkty</div>
+            {include './../../../Component/ProductGrid/templates/summary.latte', 'count' => 6, 'container' => 'p-0', 'useTitleTag' => FALSE}
         </div>
     </div>
 
     {include './../../../Component/Category/templates/category.latte'}
 
     {include './../../../Component/Review/templates/review.latte'}
+
+    <section class="bg-white py-5">
+        <div class="container">
+            <h1>Název e-shopu</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias nesciunt odio officiis quo! Atque beatae
+                doloremque error ipsam labore nemo nulla officia quod repudiandae voluptatem! Amet eaque libero mollitia
+                saepe.
+            </p>
+        </div>
+    </section>
 {/block}

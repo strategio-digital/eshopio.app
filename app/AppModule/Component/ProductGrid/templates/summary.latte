@@ -16,7 +16,11 @@
 
                 <div class="pt-0 px-4 ">
                     <a href="#" class="d-block text-dark">
-                        <h2 class="h6 font-weight-bold">Název produktu</h2>
+                        {if $useTitleTag}
+                            <h2 class="h6 font-weight-bold">Název produktu {$i}</h2>
+                        {else}
+                            <div class="h6 font-weight-bold">Název produktu {$i}</div>
+                        {/if}
                     </a>
                     <p class="small text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque facilis nostrum rem suscipit. Aliquid cumque deserunt in incidunt.</p>
                 </div>
