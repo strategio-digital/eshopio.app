@@ -2,13 +2,22 @@
  * Copyright (c) 2020 Wakers.cz
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  *}
+
+{varType App\BaseModule\Presenter\FrontendPresenter $presenter}
+
 <!doctype html>
 <html class="h-100" lang="cs">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>{ifset title}{include title}{/ifset}</title>
+    <title>
+        {ifset title}
+            {include title}
+        {else}
+            {$presenter->breadCrumb->getLastBreadCrumbItem()->getName()}
+        {/ifset}
+    </title>
 
     <link rel="shortcut icon" href="{$baseUrl}/favicon.ico">
 
@@ -20,6 +29,8 @@
     {include './../../../AppModule/Component/TopBar/templates/topbar.latte'}
 
     {include './../../../AppModule/Component/Heading/templates/heading.latte'}
+
+    {include './../../../AppModule/Component/HorizontalNav/templates/horizontal-nav.latte'}
 
     {include content}
 

@@ -7,15 +7,15 @@ declare(strict_types=1);
 
 namespace App\BaseModule\Presenter;
 
-use App\AppModule\Component\BreadCrumb\BreadCrumbComponent;
+use App\AppModule\Component\BreadCrumb\BreadCrumb;
 use App\BaseModule\Component\Navbar\Navbar;
 
 abstract class FrontendPresenter extends AbstractPresenter
 {
     /**
-     * @var BreadCrumbComponent
+     * @var BreadCrumb
      */
-    protected BreadCrumbComponent $breadCrumbComponent;
+    public BreadCrumb $breadCrumb;
 
     /**
      * Startup
@@ -24,7 +24,7 @@ abstract class FrontendPresenter extends AbstractPresenter
     {
         parent::startup();
         $this->setLayout(__DIR__ . '/templates/@frontend.latte');
-        $this->breadCrumbComponent = new BreadCrumbComponent;
+        $this->breadCrumb = new BreadCrumb;
     }
 
     /**
@@ -36,10 +36,10 @@ abstract class FrontendPresenter extends AbstractPresenter
     }
 
     /**
-     * @return BreadCrumbComponent
+     * @return BreadCrumb
      */
-    protected function createComponentBreadCrumb() : BreadCrumbComponent
+    protected function createComponentBreadCrumb() : BreadCrumb
     {
-        return $this->breadCrumbComponent;
+        return $this->breadCrumb;
     }
 }

@@ -18,9 +18,9 @@ final class ContactPresenter extends FrontendPresenter
         parent::beforeRender();
 
         $breadCrumbItems = new ArrayCollection([
-            new BreadCrumbItem('Kontakty', 'Contact:summary')
+            new BreadCrumbItem('Kontakty', ':App:Contact:summary')
         ]);
 
-        $this->breadCrumbComponent->setBreadCrumbItems($breadCrumbItems);
+        $this->breadCrumb->setBreadCrumbItems($breadCrumbItems);
     }
 }

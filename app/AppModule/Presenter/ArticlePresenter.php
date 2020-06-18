@@ -17,9 +17,9 @@ class ArticlePresenter extends FrontendPresenter
     {
         parent::beforeRender();
 
-        $this->breadCrumbComponent->setBreadCrumbItems(new ArrayCollection([
+        $this->breadCrumb->setBreadCrumbItems(new ArrayCollection([
             //new BreadCrumbItem('Články', NULL),
-            new BreadCrumbItem('Název článku', 'Article:detail')
+            new BreadCrumbItem('Název článku', ':App:Article:detail')
         ]));
     }
 }

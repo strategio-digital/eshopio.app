@@ -18,13 +18,13 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 
-        $router->addRoute('/site-manager/<presenter>/<action>', [
+        /*$router->addRoute('/site-manager/<module>/<presenter>/<action>', [
             'module' => 'User',
             'presenter' => 'User',
             'action' => 'login'
-        ]);
+        ]);*/
 
-        $router->addRoute('/<presenter>/<action>[/<url .*>]', [
+        $router->addRoute('/<module>/<presenter>/<action>[/<url .*>]', [
             'module' => 'App',
             'presenter' => 'Home',
             'action' => 'summary'

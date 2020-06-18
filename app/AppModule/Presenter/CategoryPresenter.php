@@ -18,9 +18,9 @@ final class CategoryPresenter extends FrontendPresenter
         parent::beforeRender();
 
         $breadCrumbItems = new ArrayCollection([
-            new BreadCrumbItem('Název kategorie', 'Category:summary')
+            new BreadCrumbItem('Název kategorie', ':App:Category:summary')
         ]);
 
-        $this->breadCrumbComponent->setBreadCrumbItems($breadCrumbItems);
+        $this->breadCrumb->setBreadCrumbItems($breadCrumbItems);
     }
 }
