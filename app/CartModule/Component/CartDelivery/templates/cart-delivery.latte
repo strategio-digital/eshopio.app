@@ -31,14 +31,14 @@
     <div class="{if !$iterator->isLast()}border-bottom{/if} p-3" n:foreach="$deliveries as $name => $delivery">
         <div class="row d-flex align-items-center">
 
-            <div class="col-auto col-sm-1 order-0">
+            <div class="col-1 col-sm-1 order-0">
                 <div class="custom-control custom-radio">
                     <input type="radio" id="delivery-{$iterator->getCounter()}" name="delivery" class="custom-control-input">
-                    <label class="custom-control-label" for="delivery-{$iterator->getCounter()}"></label>
+                    <label class="custom-control-label d-flex align-items-center" for="delivery-{$iterator->getCounter()}"></label>
                 </div>
             </div>
 
-            <div class="col-auto col-sm-1 order-1">
+            <div class="col-2 col-sm-1 order-1">
                 {ifset $delivery['img']}
                     <img src="{$basePath}/temp/static/img/cart-module/delivery/{$delivery['img']}" alt="" width="34">
                 {/ifset}
