@@ -5,20 +5,20 @@
  */
 declare(strict_types=1);
 
-namespace App\CategoryModule\Presenter;
+namespace App\ProductModule\Presenter;
 
 use App\AppModule\Component\BreadCrumb\Entity\BreadCrumbItem;
 use App\BaseModule\Presenter\FrontendPresenter;
 use Doctrine\Common\Collections\ArrayCollection;
 
-final class CategoryPresenter extends FrontendPresenter
+class ProductPresenter extends FrontendPresenter
 {
-    public function startup() : void
+    public function actionDetail() : void
     {
-        parent::startup();
-
         $breadCrumbItems = new ArrayCollection([
-            new BreadCrumbItem('Název kategorie', ':Category:Category:summary')
+            new BreadCrumbItem('Kategorie', ':Category:Category:summary'),
+            new BreadCrumbItem('Pod-kategorie', ':Category:Category:summary'),
+            new BreadCrumbItem('Název produktu', ':Product:Product:detail')
         ]);
 
         $this->breadCrumb->setBreadCrumbItems($breadCrumbItems);

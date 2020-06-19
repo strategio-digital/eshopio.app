@@ -26,27 +26,28 @@
     {/block}
 </head>
 <body class="h-100 position-relative">
-    {include './../../../ContactModule/Component/TopBar/templates/top-bar.latte'}
-
-    {include './../../../AppModule/Component/Heading/templates/heading.latte'}
-
-    {include './../../../AppModule/Component/HorizontalNav/templates/horizontal-nav.latte'}
+    {block contentUp}
+        {include './../../../ContactModule/Component/TopBar/templates/top-bar.latte'}
+        {include './../../../AppModule/Component/Heading/templates/heading.latte', 'allowSearch' => TRUE}
+        {include './../../../AppModule/Component/HorizontalNav/templates/horizontal-nav.latte'}
+    {/block}
 
     {include content}
 
-    {include './../../../NewsletterModule/Component/NewsletterForm/templates/newsletter-form.latte'}
+    {block contentDown}
+        {include './../../../NewsletterModule/Component/NewsletterForm/templates/newsletter-form.latte'}
+        {include './../../../AppModule/Component/Footer/templates/footer.latte'}
+        {include './../../../AppModule/Component/Footer/templates/warranty.latte'}
 
-    {include './../../../AppModule/Component/Footer/templates/footer.latte'}
+        <div class="bg-danger py-2">
 
-    {include './../../../AppModule/Component/Footer/templates/warranty.latte'}
-
-    <div class="bg-danger py-2">
-        <div class="container">
-            <a href="https://www.strategio.dev" class="text-white small">
-                &copy; 2020 by Strategio | E-shopy a výkonnostní marketing
-            </a>
+            <div class="container">
+                <a href="https://www.strategio.dev" class="text-white small">
+                    &copy; 2020 by Strategio | E-shopy a výkonnostní marketing
+                </a>
+            </div>
         </div>
-    </div>
+    {/block}
 
 	{block scripts}
         {control assetLoader 'frontend-build.js'}

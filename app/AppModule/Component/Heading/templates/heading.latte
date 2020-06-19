@@ -3,6 +3,8 @@
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  *}
 
+{varType bool $allowSearch}
+
 <aside class="bg-white">
     <div class="container py-4">
         <div class="row d-flex align-items-center">
@@ -12,12 +14,14 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <form class="input-group mb-0">
-                    <input type="text" class="form-control" placeholder="Napište, co hledáte">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-primary">Hledat</button>
-                    </div>
-                </form>
+               {if isset($allowSearch) && $allowSearch === TRUE}
+                    <form class="input-group mb-0">
+                        <input type="text" class="form-control" placeholder="Napište, co hledáte">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary">Hledat</button>
+                        </div>
+                    </form>
+                {/if}
             </div>
 
             <div class="col-md-5 d-flex align-items-center justify-content-end">
@@ -27,7 +31,7 @@
                     {control userLoginForm:dropdown}
                 {/if}
 
-                <a href="#" class="navbar-cart">
+                <a href="{plink :Cart:Cart:summary}" class="navbar-cart">
                     <div class="basket-icon">
                         <i class="fas fa-shopping-basket fa-2x"></i>
                         <span class="product-counter">9</span>

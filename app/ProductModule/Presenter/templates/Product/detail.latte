@@ -1,0 +1,23 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType App\ProductModule\Presenter\ProductPresenter $presenter}
+
+{block content}
+    <div class="container mt-4">
+        <div class="row">
+            <section class="col-lg-12 mb-5">
+                {control breadCrumb}
+
+                <h1 class="mt-4">{$presenter->breadCrumb->getLastBreadCrumbItem()->getName()}</h1>
+
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet commodi cupiditate doloribus
+                    earum enim esse facere ipsam iure laboriosam laudantium possimus provident quae recusandae rem,
+                    tempora ut? Vel, vero.</p>
+
+            </section>
+        </div>
+    </div>
+{/block}

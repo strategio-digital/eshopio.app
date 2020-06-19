@@ -1,0 +1,38 @@
+/**
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ */
+
+.cart-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-weight: 700;
+  text-decoration: none;
+  color: $white;
+  text-transform: uppercase;
+  //border-bottom: 1px solid $gray-600;
+  padding: 2rem 1rem;
+  background-color: $danger;
+
+  &.active,
+  &:hover,
+  &:focus {
+    background-color: darken($danger, 10%);
+    text-decoration: none;
+    color: $white;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid $white;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
