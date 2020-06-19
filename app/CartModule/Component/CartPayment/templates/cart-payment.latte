@@ -1,0 +1,69 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{var $deliveries = [
+    'Dobríkou' => [
+        'img' => 'cod.svg',
+        'price' => 49
+    ],
+    'Kartou online' => [
+        'img' => 'visa-mc.svg',
+        'price' => -25,
+        'description' => 'Okamžitá platba přes platební bránu GoPay.'
+    ],
+    'Zálohou - převodem z účtu' => [
+        'img' => 'bank.svg',
+        'price' => -25,
+        'description' => 'Klasický bankovní převod - může trvat déle.'
+    ],
+    'Google Pay' => [
+        'img' => 'google-pay.svg',
+        'price' => -25
+    ],
+    'PLATBA 24' => [
+        'img' => 'csas.svg',
+        'price' => -25
+    ],
+]}
+
+<div class="border px-3">
+    <div class="{if !$iterator->isLast()}border-bottom{/if} p-3" n:foreach="$deliveries as $name => $delivery">
+        <div class="row d-flex align-items-center">
+
+            <div class="col-1 col-sm-1 order-0">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="payment-{$iterator->getCounter()}" name="payment" class="custom-control-input">
+                    <label class="custom-control-label d-flex align-items-center" for="paymet-{$iterator->getCounter()}"></label>
+                </div>
+            </div>
+
+            <div class="col-2 col-sm-1 order-1">
+                {ifset $delivery['img']}
+                    <img src="{$basePath}/temp/static/img/cart-module/payment/{$delivery['img']}" alt="" width="34">
+                {/ifset}
+            </div>
+
+            <div class="col-12 col-lg-7 col-xl-8 order-3 order-lg-2 mt-2">
+                <span class="d-block">{$name}</span>
+                {ifset $delivery['description']}
+                    <span class="d-block small">{$delivery['description']}</span>
+                {/ifset}
+            </div>
+
+            <div class="col-8 col-sm-10 col-lg-2 text-right order-2 order-lg-3">
+                {if $delivery['price'] < 0}
+                    <div class="text-success font-weight-bold">
+                        <div class="small">sleva</div>
+                        <div>{$delivery['price']} Kč</div>
+                    </div>
+                {elseif $delivery['price'] === 0}
+                    <div class="text-success font-weight-bold">ZDARMA</div>
+                {else}
+                    <div>{$delivery['price']}&nbsp;Kč</div>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType string $class}
+
+{block title}
+    Košík - Doprava a platba
+{/block}
+
+{block contentUp}
+    {include './../../../../ContactModule/Component/TopBar/templates/top-bar.latte'}
+    {include './../../../../AppModule/Component/Heading/templates/heading.latte', 'allowSearch' => FALSE}
+{/block}
+
+{block contentDown}{/block}
+
+{define stepButton}
+    <div class="row align-items-center mt-5 {$class}">
+        <div class="col-4">
+            <a href="{plink :Cart:Cart:summary}">
+                Zpět do košíku
+            </a>
+        </div>
+
+        <div class="col-8 text-right">
+            <a href="{plink :Cart:Cart:billing}" class="btn btn-danger btn-lg">
+                Pokračovat v objednávce
+            </a>
+        </div>
+    </div>
+{/define}
+
+{block content}
+    {include './../../../Component/CartStep/templates/cart-step.latte', 'current' => ':Cart:Cart:deliveryPayment'}
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="h2 mb-4">Zvolte dopravu</div>
+                {include './../../../Component/CartDelivery/templates/cart-delivery.latte'}
+
+                <div class="h2 mb-4 mt-5">Zvolte platbu</div>
+                {include './../../../Component/CartPayment/templates/cart-payment.latte'}
+
+                {include stepButton, 'class' => 'd-none d-lg-flex'}
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                {include './../../../Component/CartContent/templates/cart-content.latte'}
+            </div>
+        </div>
+
+        {include stepButton, 'class' => 'd-flex d-lg-none'}
+    </div>
+{/block}

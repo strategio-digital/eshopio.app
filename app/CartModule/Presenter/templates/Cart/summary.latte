@@ -4,7 +4,7 @@
  *}
  
 {block title}
-    Nákupní košík
+    Košík
 {/block}
 
 {block contentUp}
@@ -17,20 +17,7 @@
 {/block}
 
 {block content}
-    <div class="bg-danger d-none d-md-block">
-        <div class="container">
-            <div class="mb-4">
-                <div class="row m-0">
-                    <div class="col-md-4 px-0" n:foreach="['Nákupní košík', 'Doprava a platba', 'Dodání a fakturace'] as $step">
-                        <a href="#" class="cart-step {if $iterator->isFirst()}active{/if}">
-                            <div class="circle">{$iterator->getCounter()}</div>
-                            <div>{$step}</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {include './../../../Component/CartStep/templates/cart-step.latte', 'current' => ':Cart:Cart:summary'}
 
     <div class="container">
         <div class="pt-4 mb-5">
@@ -38,64 +25,7 @@
             <p class="pb-0">Pokud není stanoveno jinak, jsou uvedené ceny včetně DPH.</p>
         </div>
 
-        <div class="cart-item position-relative border mt-4" n:foreach="['PremiumCord DisplayPort 1.2 přípojný kabel M/M, zlacené konektory, 2m', 'Test', 'PremiumCord DisplayPort 1.2'] as $item">
-
-            <a href="#" class="item-remove text-danger">
-                <i class="fas fa-times"></i>
-            </a>
-
-            <div class="row d-flex align-items-center">
-                <div class="col-3 col-sm-auto d-none d-lg-flex">
-                    <div class="p-0 p-sm-3 bg-light">
-                        <img src="//placehold.it/80x80" class="img-fluid">
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-10">
-                    <div class="row d-flex align-items-center p-3 p-lg-0">
-
-                        <div class="col-12 col-xl-3">
-                            <a href="{plink :Product:Product:detail}" class="d-flex align-items-center mb-3 mb-xl-0">
-                                <img src="//placehold.it/44x44" class="img-fluid mr-3 d-lg-none">
-                                <span>{$item}</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6 col-md-2 col-xl-2">
-                            <input type="number" min="1" class="form-control" value="3" style="width: 80px">
-                        </div>
-
-                        <div class="col-6 col-md-3 col-lg-3 col-xl-2">
-                            <span class="text-success font-weight-bold">Skladem</span> (97&nbsp;ks)
-                        </div>
-
-                        <div class="col-md-7 col-lg-7 col-xl-5">
-                            <div class="item-price py-2 px-3 p-md-0 mt-3 mt-md-0">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-sm-6 col-md-6 col-xl-6">
-                                        343 223,54 Kč / ks
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xl-6 font-weight-bold mt-3 mt-sm-0">
-                                        <div class="text-success">1 043 223,54 Kč</div>
-                                        <div class="small">810 243,30 Kč bez 21% DPH</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-5 text-right">
-            <div class="h4">
-                Celkem k úhradě: <span class="font-weight-bold text-success">12 043 223,54 Kč</span>
-            </div>
-            <div>
-                Cena bez DPH: <span>10 032 343,35 Kč</span>
-            </div>
-        </div>
+        {include './../../../Component/CartItem/templates/cart-item.latte'}
         
         <div class="row d-flex align-items-center mt-5">
             <div class="col-6">
@@ -105,7 +35,7 @@
             </div>
             
             <div class="col-6 text-right">
-                <a href="#" class="btn btn-danger btn-lg">
+                <a href="{plink :Cart:Cart:deliveryPayment}" class="btn btn-danger btn-lg">
                     Pokračovat v objednávce
                 </a>
             </div>

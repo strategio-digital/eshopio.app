@@ -11,9 +11,5 @@ use App\BaseModule\Presenter\FrontendPresenter;
 
 class CartPresenter extends FrontendPresenter
 {
-    public function actionSummary() : void
-    {
-
-    }
 
 }

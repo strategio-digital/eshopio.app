@@ -1,0 +1,63 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{var $deliveries = [
+    'Osobní odběr - České Budějovice' => [
+        'price' => 0,
+        'description' => 'Ulice: Senovážné náměstí 3243/1'
+    ],
+    'Česká pošta - na poštu' => [
+        'img' => 'cp.svg',
+        'price' => 89
+    ],
+    'Česká pošta - do ruky' => [
+        'img' => 'cp.svg',
+        'price' => 89
+    ],
+    'PPL s avizací po ČR' => [
+        'img' => 'ppl.svg',
+        'price' => 129
+    ],
+    'DPD' => [
+        'img' => 'dpd.svg',
+        'price' => 129,
+        'description' => 'Testovací popisek dopravy.'
+    ],
+]}
+
+<div class="border px-3">
+    <div class="{if !$iterator->isLast()}border-bottom{/if} p-3" n:foreach="$deliveries as $name => $delivery">
+        <div class="row d-flex align-items-center">
+
+            <div class="col-auto col-sm-1 order-0">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio{$iterator->getCounter()}" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label d-flex align-items-center" for="customRadio{$iterator->getCounter()}"></label>
+                </div>
+            </div>
+
+            <div class="col-auto col-sm-1 order-1">
+                {ifset $delivery['img']}
+                    <img src="{$basePath}/temp/static/img/cart-module/delivery/{$delivery['img']}" alt="" width="34">
+                {/ifset}
+            </div>
+
+            <div class="col-12 col-lg-7 col-xl-8 order-3 order-lg-2 mt-2">
+                <span class="d-block">{$name}</span>
+                {ifset $delivery['description']}
+                    <span class="d-block small">{$delivery['description']}</span>
+                {/ifset}
+            </div>
+
+            <div class="col-8 col-sm-10 col-lg-2 text-right order-2 order-lg-3">
+                {if $delivery['price'] === 0}
+                    <span class="text-success font-weight-bold">ZDARMA</span>
+                {else}
+                    <span>{$delivery['price']}&nbsp;Kč</span>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
