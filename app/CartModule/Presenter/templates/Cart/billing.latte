@@ -42,6 +42,9 @@
                 <div class="h1 mb-4">Informace pro dodání zboží</div>
 
                 <div class="p-4 p-md-5 bg-light mb-4">
+
+                    <div class="font-weight-bold mb-3">Kontaktní údaje</div>
+
                     <div class="form-group row">
                         <label for="email" class="col-md-4 col-form-label">E-mail:</label>
                         <div class="col-md-8">
@@ -57,31 +60,34 @@
                     <div class="form-group row">
                         <label for="" class="col-md-4 col-form-label">Jméno:</label>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="">
+                            <input type="text" class="form-control" id="">
                         </div>
                     </div>
 
                     <div class="form-group row mb-0">
                         <label for="" class="col-md-4 col-form-label">Příjmení:</label>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="">
+                            <input type="text" class="form-control" id="">
                         </div>
                     </div>
                 </div>
 
                 <div class="p-4 p-md-5 bg-light mb-4">
+
+                    <div class="font-weight-bold mb-3">Nákup na firmu</div>
+
                     <div class="form-group row mb-0">
                         <div class="col-12">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">
                                     Nakupuji na firmu
-                                    <br><span class="small">Umožní vyplnit IČ, DIČ a obchodní jméno.</span>
+                                    <br><span class="small">Zvolte, pokud potřebujete vyplnit IČ, případně DIČ.</span>
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <div class="d-">
+                    <div class="d-none">
                         <div class="form-group row mt-4">
                             <label class="col-md-4 col-form-label">IČ:</label>
                             <div class="col-md-8">
@@ -92,17 +98,17 @@
                         <div class="form-group row">
                             <label for="" class="col-md-4 col-form-label">DIČ:</label>
                             <div class="col-md-8">
-                                <input type="password" class="form-control" id="">
+                                <input type="text" class="form-control" id="">
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row d-flex align-items-center">
                             <label for="" class="col-md-4 col-form-label">Plátce DPH:</label>
                             <div class="col-md-8">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">
-                                        Ano
+                                    <input type="checkbox" class="custom-control-input" id="vat">
+                                    <label class="custom-control-label" for="vat">
+                                        Jsem plátce DPH
                                     </label>
                                 </div>
                             </div>
@@ -111,19 +117,131 @@
                         <div class="form-group row mb-0">
                             <label for="" class="col-md-4 col-form-label">Obchodní jméno <span class="small">(volitelné)</span>:</label>
                             <div class="col-md-8">
-                                <input type="password" class="form-control" id="">
+                                <input type="text" class="form-control" id="">
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="mt-5">
-                    <p>
-                        Registrací souhlasíte s <a href="{plink :Article:Article:detail}" target="_blank">obchodními podmínkami</a>
-                        a <a href="{plink :Article:Article:detail}" target="_blank">podmínkami ochrany osobních údajů</a>.
-                    </p>
+                <div class="p-4 p-md-5 bg-light mb-4">
+
+                    <div class="font-weight-bold mb-3">Fakturační údaje</div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label">Ulice a č.p.:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="text">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label">Obec:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-md-4 col-form-label">PSČ:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <label for="" class="col-md-4 col-form-label">Stát:</label>
+                        <div class="col-md-8">
+                            <select class="custom-select" id="state">
+                                <option selected>Česká Republika</option>
+                                <option>Slovenská Republika</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="p-4 p-md-5 bg-light mb-4">
+
+                    <div class="font-weight-bold mb-3">Rozdílní dodací adresa</div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-12">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="address">
+                                <label class="custom-control-label" for="address">
+                                    Zaslat zboží na jinou adresu
+                                    <br><span class="small">Zvolte, pokud jsou rozdílné dodací a fakturační údaje.</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none">
+                        <div class="form-group row mt-4">
+                            <label class="col-md-4 col-form-label">Adresát:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label">Firma, byt, patro <span class="small">(volitelné)</span>:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label">Ulice a č.p.:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label">Obec nebo město:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label">PSČ:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label">Stát:</label>
+                            <div class="col-md-8">
+                                <select class="custom-select" id="state">
+                                    <option selected>Česká Republika</option>
+                                    <option>Slovenská Republika</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label">Telefon <span class="small">(volitelné)</span>:</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 p-md-5 bg-light mb-4">
+                    <div class="form-group row mb-0">
+                        <label class="col-md-12 col-form-label">Ještě něco co bychom měli vědět? <span class="small">(volitelné)</span></label>
+                        <div class="col-md-12">
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-5 mb-0">
+                    Odesláním objednávky souhlasíte s <a href="{plink :Article:Article:detail}" target="_blank">obchodními podmínkami</a>
+                    a <a href="{plink :Article:Article:detail}" target="_blank">podmínkami ochrany osobních údajů</a>.
+                </p>
 
                 {include stepButton, 'class' => 'd-none d-lg-flex'}
             </div>
