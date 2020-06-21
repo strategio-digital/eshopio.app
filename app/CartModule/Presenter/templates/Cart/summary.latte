@@ -19,7 +19,7 @@
 {block content}
     {include './../../../Component/CartStep/templates/cart-step.latte', 'current' => ':Cart:Cart:summary'}
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="pt-4 mb-5">
             <h1>Váš nakupní košík</h1>
             <p class="pb-0">Pokud není stanoveno jinak, jsou uvedené ceny včetně DPH.</p>
@@ -28,13 +28,13 @@
         {include './../../../Component/CartItem/templates/cart-item.latte'}
         
         <div class="row d-flex align-items-center mt-5">
-            <div class="col-6">
+            <div class="col-4">
                 <a href="{plink :Homepage:Homepage:summary}">
                     Zpět do obchodu
                 </a>
             </div>
             
-            <div class="col-6 text-right">
+            <div class="col-8 text-right">
                 <a href="{plink :Cart:Cart:deliveryPayment}" class="btn btn-danger btn-lg">
                     Pokračovat v objednávce
                 </a>
