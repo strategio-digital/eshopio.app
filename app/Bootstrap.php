@@ -13,7 +13,7 @@ use Symfony\Component\Dotenv\Dotenv;
 class Bootstrap
 {
     public static function boot() : Configurator
-	{
+    {
         $dotenv = new Dotenv;
         $dotenv->loadEnv(__DIR__ . '/../.env');
         $_ENV['NETTE_DEBUG'] = $_ENV['NETTE_DEBUG'] === "1";
@@ -27,10 +27,10 @@ class Bootstrap
         $configurator->enableTracy(__DIR__ . '/../log');
         $configurator->setTempDirectory(__DIR__ . '/../temp');
 
-		$configurator
-			->addConfig(__DIR__ . '/AppModule/config/app.neon')
-			->addConfig(__DIR__ . '/AppModule/config/doctrine.neon');
+        $configurator
+            ->addConfig(__DIR__ . '/AppModule/config/app.neon')
+            ->addConfig(__DIR__ . '/AppModule/config/doctrine.neon');
 
-		return $configurator;
-	}
+        return $configurator;
+    }
 }
