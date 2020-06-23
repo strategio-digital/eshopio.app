@@ -61,6 +61,9 @@ module.exports = function ()
             // Dropdown
             './app/BaseModule/assets/js/dropdown.js',
 
+            // Quantity input
+            './assets/static/js/quantity-input.js',
+
             // Magnific popup
             './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
             './app/BaseModule/assets/js/magnific-popup.js',
