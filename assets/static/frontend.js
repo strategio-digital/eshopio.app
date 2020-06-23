@@ -62,7 +62,10 @@ module.exports = function ()
             './app/BaseModule/assets/js/dropdown.js',
 
             // Quantity input
-            './assets/static/js/quantity-input.js',
+            './assets/static/js/input-quantity.js',
+
+            // Big radio input (cart delivery & payment)
+            './assets/static/js/input-radio.js',
 
             // Magnific popup
             './node_modules/magnific-popup/dist/jquery.magnific-popup.js',

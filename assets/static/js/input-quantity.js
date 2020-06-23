@@ -4,8 +4,8 @@
  */
 
 $(function () {
-    $(document).on('click', '.quantity-input span', function () {
-        var $input = $(this).parents('.quantity-input').find('input');
+    $(document).on('click', '.input-quantity span', function () {
+        var $input = $(this).parents('.input-quantity').find('input');
 
         var direction = $(this).hasClass('decrease') === true ? -1 : 1;
         var value = parseInt($input.val());
