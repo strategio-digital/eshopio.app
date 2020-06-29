@@ -7,7 +7,7 @@
     <div class="row product-grid">
         <div class="col-md-6 col-xl-4 grid-item" n:for="$i = 1; $i <= $count; $i++">
             <article class="bg-white">
-                <a href="#" class="d-block position-relative p-4">
+                <a href="{plink :Product:Product:detail}" class="d-block position-relative p-4">
                     <div class="small text-warning position-absolute" style="left: 2rem; top: 2rem">
                         <i class="fas fa-star" n:for="$s = 0; $s < 5; $s++"></i>
                     </div>
@@ -15,7 +15,7 @@
                 </a>
 
                 <div class="pt-0 px-4 ">
-                    <a href="#" class="d-block text-dark">
+                    <a href="{plink :Product:Product:detail}" class="d-block text-dark">
                         {if $useTitleTag}
                             <h2 class="h6 font-weight-bold">Název produktu {$i}</h2>
                         {else}
@@ -28,7 +28,10 @@
                 <div class="px-4 pb-4 d-flex align-items-center justify-content-between">
                     <div class="">
                         <div>
-                            <del class="small">232 344 Kč</del>
+                            <div class="small">
+                                <del>232 344 Kč</del>
+                                -50%
+                            </div>
                             <div class="h6 text-danger font-weight-bold">132 145 Kč</div>
                         </div>
                         <div class="text-success small font-weight-bold">Skladem</div>
