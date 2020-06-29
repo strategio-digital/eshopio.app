@@ -1,0 +1,45 @@
+{*
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{varType string $class}
+
+{block title}
+    Děkujeme za nákup
+{/block}
+
+{block contentUp}
+    {include './../../../../ContactModule/Component/TopBar/templates/top-bar.latte'}
+    {include './../../../../AppModule/Component/Heading/templates/heading.latte', 'allowSearch' => FALSE}
+    {include './../../../../AppModule/Component/HorizontalNav/templates/horizontal-nav.latte'}
+{/block}
+
+{block contentDown}{/block}
+
+{block content}
+    <div class="container my-5">
+        <div class="h1">Děkujeme za nákup</div>
+
+        <p class="lead mb-5">
+            Vaše objednávka <span class="font-weight-bold">č.202000001</span> byla uložena.
+            Rekapitulaci objednávky obdržíte i na e-mail.
+        </p>
+
+        <div class="mb-5">
+            <a href="{plink :Homepage:Homepage:summary}" class="btn btn-danger btn-lg">
+                Zpět do obchodu
+            </a>
+        </div>
+
+        <div class="h2 mb-4">Obsah objednávky</div>
+        {include './../../../Component/CartContent/templates/cart-content.latte'}
+
+    </div>
+
+    <div class="container mb-5">
+        <a href="{plink :Homepage:Homepage:summary}" class="btn btn-danger btn-lg">
+            Zpět do obchodu
+        </a>
+    </div>
+{/block}
