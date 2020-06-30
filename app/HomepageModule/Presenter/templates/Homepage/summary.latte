@@ -4,27 +4,30 @@
  *}
 
 {block content}
-    {include './../../../../DiscountModule/Component/HomepageDiscount/templates/homepage-discount.latte'}
+    <div class="d-flex flex-column">
+        <section class="bg-white py-5 order-last">
+            <div class="container">
+                <h1>Název e-shopu</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias nesciunt odio officiis quo! Atque beatae
+                    doloremque error ipsam labore nemo nulla officia quod repudiandae voluptatem! Amet eaque libero mollitia
+                    saepe.
+                </p>
+            </div>
+        </section>
 
-    <div class="bg-white py-5">
-        <div class="container">
-            <div class="h2 p-0">Vybrané produkty</div>
-            {include './../../../../ProductModule/Component/Grid/templates/grid.latte', 'count' => 6, 'container' => 'p-0', 'useTitleTag' => FALSE}
+        {include './../../../../DiscountModule/Component/HomepageDiscount/templates/homepage-discount.latte'}
+
+        <div class="bg-white py-5">
+            <div class="container">
+                <div class="h2 p-0">Vybrané produkty</div>
+                {include './../../../../ProductModule/Component/Grid/templates/grid.latte', 'count' => 6, 'container' => 'p-0', 'useTitleTag' => FALSE}
+            </div>
         </div>
+
+        {include './../../../../CategoryModule/Component/Category/templates/category.latte'}
+
+        {include './../../../../ReviewModule/Component/HomepageReview/templates/homepage-review.latte'}
+
     </div>
-
-    {include './../../../../CategoryModule/Component/Category/templates/category.latte'}
-
-    {include './../../../../ReviewModule/Component/HomepageReview/templates/homepage-review.latte'}
-
-    <section class="bg-white py-5">
-        <div class="container">
-            <h1>Název e-shopu</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias nesciunt odio officiis quo! Atque beatae
-                doloremque error ipsam labore nemo nulla officia quod repudiandae voluptatem! Amet eaque libero mollitia
-                saepe.
-            </p>
-        </div>
-    </section>
 {/block}
