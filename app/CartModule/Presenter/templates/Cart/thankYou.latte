@@ -18,28 +18,33 @@
 {block contentDown}{/block}
 
 {block content}
-    <div class="container my-5">
-        <div class="h1">Děkujeme za nákup</div>
+    <div class="container py-5">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="h1">Děkujeme za Váš nákup</div>
 
-        <p class="lead mb-5">
-            Vaše objednávka <span class="font-weight-bold">č.202000001</span> byla uložena.
-            Rekapitulaci objednávky obdržíte i na e-mail.
-        </p>
+                <p class="mb-5">
+                    Vaše objednávka číslo <span class="font-weight-bold">202000001</span> byla uložena.
+                    O dalších podrobnostech Vás budeme informovat na e-mail.
+                </p>
 
-        <div class="mb-5">
-            <a href="{plink :Homepage:Homepage:summary}" class="btn btn-danger btn-lg">
-                Zpět do obchodu
-            </a>
+                <div class=""></div>
+
+                <div class="mb-5">
+                    <div class="h4">Celkem k úhradě: <span class="text-success font-weight-bold">12 043 322,54 Kč</span></div>
+                    <div class="text-dark">Cena bez DPH: 10 032 343,35 Kč</div>
+                </div>
+
+                <div class="mb-5">
+                    <a href="{plink :Homepage:Homepage:summary}" class="btn btn-danger btn-lg">
+                        Zpět do obchodu
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+                {include './../../../Component/CartContent/templates/cart-content.latte', 'showPrice' => FALSE}
+            </div>
         </div>
-
-        <div class="h2 mb-4">Obsah objednávky</div>
-        {include './../../../Component/CartContent/templates/cart-content.latte'}
-
-    </div>
-
-    <div class="container mb-5">
-        <a href="{plink :Homepage:Homepage:summary}" class="btn btn-danger btn-lg">
-            Zpět do obchodu
-        </a>
     </div>
 {/block}

@@ -33,6 +33,13 @@
     </div>
 {/define}
 
+{define agreement}
+    <p class="mt-5 mb-0">
+        Odesláním objednávky souhlasíte s <a href="{plink :Article:Article:detail}" target="_blank">obchodními podmínkami</a>
+        a <a href="{plink :Article:Article:detail}" target="_blank">podmínkami ochrany osobních údajů</a>.
+    </p>
+{/define}
+
 {block content}
     {include './../../../Component/CartStep/templates/cart-step.latte', 'current' => ':Cart:Cart:billing'}
 
@@ -242,17 +249,20 @@
                     </div>
                 </div>
 
-                <p class="mt-5 mb-0">
-                    Odesláním objednávky souhlasíte s <a href="{plink :Article:Article:detail}" target="_blank">obchodními podmínkami</a>
-                    a <a href="{plink :Article:Article:detail}" target="_blank">podmínkami ochrany osobních údajů</a>.
-                </p>
+                <div class="d-none d-lg-block">
+                    {include agreement}
+                </div>
 
                 {include stepButton, 'class' => 'd-none d-lg-flex'}
             </div>
 
-            <div class="col-lg-5 mt-5 mt-lg-0">
-                {include './../../../Component/CartContent/templates/cart-content.latte'}
+            <div class="col-lg-5">
+                {include './../../../Component/CartContent/templates/cart-content.latte', 'showPrice' => TRUE}
             </div>
+        </div>
+
+        <div class="d-block d-lg-none">
+            {include agreement}
         </div>
 
         {include stepButton, 'class' => 'd-flex d-lg-none'}
