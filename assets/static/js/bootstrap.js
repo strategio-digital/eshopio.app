@@ -5,4 +5,5 @@
 
 $(function () {
     $('.filter').collapse('show');
+    $('[data-toggle="tooltip"]').tooltip();
 });

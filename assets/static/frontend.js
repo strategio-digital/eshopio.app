@@ -40,7 +40,7 @@ module.exports = function ()
             //'./node_modules/bootstrap/js/dist/scrollspy.js',
             './node_modules/bootstrap/js/dist/dropdown.js',
             './node_modules/bootstrap/js/dist/toast.js',
-            //'./node_modules/bootstrap/js/dist/tooltip.js',
+            './node_modules/bootstrap/js/dist/tooltip.js',
             './node_modules/bootstrap/js/dist/tab.js',
 
             './assets/static/js/bootstrap.js',
