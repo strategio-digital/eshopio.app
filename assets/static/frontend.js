@@ -58,18 +58,24 @@ module.exports = function ()
             // Notification
             './app/BaseModule/assets/js/notification.js',
 
-            // Dropdown
-            './app/BaseModule/assets/js/dropdown.js',
-
             // Quantity input
             './assets/static/js/input-quantity.js',
 
             // Big radio input (cart delivery & payment)
             './assets/static/js/input-radio.js',
 
+            // Owl carousel
+            // Node - Owl Carousel
+            './node_modules/owl.carousel/src/js/owl.carousel.js',
+            './node_modules/owl.carousel/src/js/owl.support.js',
+            //'./node_modules/owl.carousel/src/js/owl.animate.js',
+            //'./node_modules/owl.carousel/src/js/owl.navigation.js',
+            //'./node_modules/owl.carousel/src/js/owl.autoplay.js',
+            './assets/static/js/owl-carousel.js',
+
             // Magnific popup
             './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-            './app/BaseModule/assets/js/magnific-popup.js',
+            './assets/static/js/magnific-popup.js',
 
             // Nette init
             './app/BaseModule/assets/js/nette.init.js'

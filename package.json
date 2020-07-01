@@ -4,7 +4,9 @@
         "Jiří Zapletal <zapletal@wakers.cz>"
     ],
     "license": "UNLICENSED",
-    "dependencies": {},
+    "dependencies": {
+        "owl.carousel": "^2.3.4"
+    },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.12.1",
         "bootstrap": "^4.4.1",

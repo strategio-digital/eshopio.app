@@ -13,11 +13,19 @@
 
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 col-xl-5">
-                        <img src="//placehold.it/800x600" alt="" class="img-fluid mt-4">
-                        <div class="mt-3 d-flex">
-                            <a href="#" n:for="$i = 0; $i < 5; $i++" class="pr-1">
-                                <img src="//placehold.it/160x120" alt="" class="img-fluid">
+                        <div class="owl-carousel d-none d-lg-block" id="owl-product" data-mfp-owl="true">
+                            <a href="//placehold.it/1400x900/{$i*100}" class="d-block" n:for="$i = 0; $i < 10; $i++" data-position="{$i}">
+                                <img src="//placehold.it/800x600/{$i*100}" alt="" class="img-fluid mt-4">
                             </a>
+                        </div>
+                        <div class="mt-3 owl-container">
+                            <div class="prev"><i class="fas fa-long-arrow-alt-left"></i></div>
+                            <div class="owl-carousel" id="owl-product-thumbnail" data-mfp-owl="true">
+                                <a href="//placehold.it/1400x900/{$i*100}" class="p-lg-2 d-block thumbnail" n:for="$i = 0; $i < 10; $i++" data-position="{$i}">
+                                    <img src="//placehold.it/660x490/{$i*100}" alt="">
+                                </a>
+                            </div>
+                            <div class="next"><i class="fas fa-long-arrow-alt-right"></i></div>
                         </div>
                     </div>
 

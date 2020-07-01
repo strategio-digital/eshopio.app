@@ -69,6 +69,11 @@
 // Magnific Popup
 @import "~magnific-popup/src/css/main";
 
+// Owl Carousel
+// Owl carousel
+@import "~owl.carousel/src/scss/core";
+@import "vendor/owl-carousel/owl-container";
+
 // Layout webu (custom layout)
 @import "components/global";
 @import "components/input-quantity";
@@ -86,3 +91,4 @@
 
 @import "components/section-category";
 @import "components/product-grid";
+@import "components/thumbnail";

@@ -5,5 +5,11 @@
 
 $(function () {
     $('.filter').collapse('show');
-    $('[data-toggle="tooltip"]').tooltip();
+
+    $.nette.ext('bootstrap-tooltip', {
+        load: function () {
+            $('.tooltip').remove();
+            $('[data-toggle="tooltip"]').tooltip('dispose').tooltip();
+        }
+    });
 });
