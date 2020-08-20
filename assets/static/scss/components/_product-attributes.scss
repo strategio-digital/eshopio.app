@@ -1,0 +1,26 @@
+/**
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
+ */
+
+.product-attributes {
+  tr {
+    th {
+      font-weight: 700;
+      border-top: none;
+      padding-top: 1.5rem;
+    }
+
+    td {
+      &[scope="row"]{
+        width: 30%;
+      }
+    }
+
+    &:hover {
+      td {
+        background-color: $gray-100;
+      }
+    }
+  }
+}
