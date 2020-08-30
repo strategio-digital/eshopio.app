@@ -1,5 +1,5 @@
 #!/bin/bash
-COMPOSER_VERSION="1.9.1"
+COMPOSER_VERSION="2.0"
 
 # Colors
 RED='\033[0;31m'
@@ -10,7 +10,7 @@ NC='\033[0m'
 help() {
   echo -e "${YELLOW}COMMANDS:"
   echo -e "${GREEN}./sc.sh composer"
-  echo -e "./sc.sh exec-php"
+  echo -e "./sc.sh exec-app"
   echo -e "./sc.sh resolve-permissions"
   echo -e "${NC}"
 }
@@ -18,9 +18,9 @@ help() {
 if test "$1" = "composer"
 then
   docker run --rm --interactive --tty --volume $PWD:/app --volume $COMPOSER_HOME:/tmp composer:$COMPOSER_VERSION ${@}
-elif test "$1" = "exec-php"
+elif test "$1" = "exec-app"
 then
-  docker-compose exec php bash
+  docker-compose exec app bash
 elif test "$1" = "resolve-permissions"
 then
   mkdir -p ./www/temp/static

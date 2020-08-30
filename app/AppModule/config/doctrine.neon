@@ -20,7 +20,7 @@ doctrine.dbal:
     connection:
         driver: mysqli
         charset: UTF8
-        host: mariadb
+        host: %MYSQL_HOST%
         user: %MYSQL_USER%
         password: %MYSQL_PASSWORD%
         dbname: %MYSQL_DATABASE%
