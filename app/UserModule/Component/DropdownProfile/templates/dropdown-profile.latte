@@ -17,7 +17,9 @@
             <div class="ml-3 mb-3">
                 <div class="h5 mb-1 font-weight-bold">Váš účet</div>
                 <div class="small">
-                    <span n:ifcontent>{$presenter->activeUser->getFirstName()} {$presenter->activeUser->getLastName()}<br></span>
+                    {if $presenter->activeUser->getFirstName() || $presenter->activeUser->getLastName()}
+                        <span>{$presenter->activeUser->getFirstName()} {$presenter->activeUser->getLastName()}<br></span>
+                    {/if}
                     {$presenter->activeUser->getEmail()}
                 </div>
             </div>
