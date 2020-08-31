@@ -9,6 +9,7 @@ namespace App\UserModule\Database\Manager;
 
 use App\BaseModule\Database\Manager\BaseManager;
 use App\UserModule\Database\Entity\User;
+use Exception;
 
 class UserManager extends BaseManager
 {
@@ -62,7 +63,7 @@ class UserManager extends BaseManager
     /**
      * @param User $user
      * @return User
-     * @throws \Exception
+     * @throws Exception
      */
     public function updateLastLogin(User $user) : User
     {
@@ -70,6 +71,6 @@ class UserManager extends BaseManager
         $this->em->persist($user);
         $this->em->flush();
 
-        return  $user;
+        return $user;
     }
 }

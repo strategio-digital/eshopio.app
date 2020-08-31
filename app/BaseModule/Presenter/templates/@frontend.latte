@@ -8,7 +8,7 @@
 <!doctype html>
 <html class="h-100" lang="cs">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>
@@ -26,36 +26,37 @@
     {/block}
 </head>
 <body class="h-100 position-relative">
-    {block contentUp}
-        {include './../../../ContactModule/Component/TopBar/templates/top-bar.latte'}
-        {include './../../../AppModule/Component/Heading/templates/heading.latte', 'allowSearch' => TRUE}
-        {include './../../../AppModule/Component/HorizontalNav/templates/horizontal-nav.latte'}
-    {/block}
+{block contentUp}
+    {include './../../../ContactModule/Component/TopBar/templates/top-bar.latte'}
+    {include './../../../AppModule/Component/Heading/templates/heading.latte', 'allowSearch' => TRUE}
+    {include './../../../AppModule/Component/HorizontalNav/templates/horizontal-nav.latte'}
+{/block}
 
     {include content}
 
     {block contentDown}
-        {include './../../../NewsletterModule/Component/NewsletterForm/templates/newsletter-form.latte'}
-        {include './../../../AppModule/Component/Footer/templates/footer.latte'}
-        {include './../../../AppModule/Component/Footer/templates/warranty.latte'}
+    {include './../../../NewsletterModule/Component/NewsletterForm/templates/newsletter-form.latte'}
+    {include './../../../AppModule/Component/Footer/templates/footer.latte'}
+    {include './../../../AppModule/Component/Footer/templates/warranty.latte'}
 
-        <div class="bg-danger py-2">
-            <div class="container">
-                <a href="https://strategio.digital" class="text-white small">
-                    &copy; 2020 by Strategio | E-shopy a výkonnostní marketing
-                </a>
-            </div>
+    <div class="bg-danger py-2">
+        <div class="container">
+            <a href="https://strategio.digital" class="text-white small">
+                &copy; 2020 by Strategio | E-shopy a výkonnostní marketing
+            </a>
         </div>
-    {/block}
+    </div>
+{/block}
 
 	{block scripts}
-        {control assetLoader 'frontend-build.js'}
-	{/block}
+    {control assetLoader 'frontend-build.js'}
+{/block}
 
     {* Flash Notifications & Ajax notifications *}
-    <div class="toast-container" id="notifications">
-        {include './../../../BaseModule/Component/Notification/templates/notification.latte'}
-    </div>
+
+<div class="toast-container" id="notifications">
+    {include './../../../BaseModule/Component/Notification/templates/notification.latte'}
+</div>
 
     {block modals}{/block}
 </body>

@@ -7,10 +7,11 @@ declare(strict_types=1);
 
 namespace App\BaseModule\Database\Bundle;
 
+use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\AST\PathExpression;
 use Doctrine\ORM\Query\Lexer;
-use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Parser;
+use Doctrine\ORM\Query\QueryException;
 use Doctrine\ORM\Query\SqlWalker;
 
 class Date extends FunctionNode
@@ -27,7 +28,7 @@ class Date extends FunctionNode
 
     /**
      * @param Parser $parser
-     * @throws \Doctrine\ORM\Query\QueryException
+     * @throws QueryException
      */
     public function parse(Parser $parser)
     {

@@ -23,5 +23,5 @@
 {/foreach}
 
 {if count($messages) > 0}
-    <script n:syntax="off">$(function(){$('.toast:not(.hide)').toast('show')})</script>
+    <script n:syntax="off">$(function (){$('.toast:not(.hide)') . toast('show')})</script>
 {/if}

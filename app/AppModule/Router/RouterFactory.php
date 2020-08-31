@@ -12,18 +12,18 @@ use Nette\Application\Routers\RouteList;
 
 final class RouterFactory
 {
-	use Nette\StaticClass;
+    use Nette\StaticClass;
 
-	protected static $modules = [
-	    'dashboard'
+    protected static $modules = [
+        'dashboard'
     ];
 
-	public static function createRouter(): RouteList
-	{
-		$router = new RouteList;
+    public static function createRouter() : RouteList
+    {
+        $router = new RouteList;
 
-		foreach (self::$modules as $module) {
-		    $uModule = ucfirst($module);
+        foreach (self::$modules as $module) {
+            $uModule = ucfirst($module);
             $router->addRoute("/site-manager/{$module}/<presenter>/<action>[/<id \d+>]", [
                 'module' => $uModule,
                 'presenter' => $uModule,
@@ -37,6 +37,6 @@ final class RouterFactory
             'action' => 'summary'
         ]);
 
-		return $router;
-	}
+        return $router;
+    }
 }

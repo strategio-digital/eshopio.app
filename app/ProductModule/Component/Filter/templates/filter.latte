@@ -29,13 +29,14 @@
         </div>
     </form>
 
-    <div n:for="$v=1; $v <= 3; $v++">
-        <a href="#nejaka-vlastnost-{$v}" class="h6 border-bottom pb-2 d-block text-dark" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="nejaka-vlastnost-{$v}">
+    <div n:for="$v = 1; $v <= 3; $v++">
+        <a href="#nejaka-vlastnost-{$v}" class="h6 border-bottom pb-2 d-block text-dark" role="button"
+           data-toggle="collapse" aria-expanded="true" aria-controls="nejaka-vlastnost-{$v}">
             Skupina vlastností {$v}
             <i class="fas fa-arrow-up float-right"></i>
         </a>
         <div class="filter collapse show" id="nejaka-vlastnost-{$v}">
-            <div class="custom-control custom-checkbox mb-1" n:for="$i=1; $i <= 5; $i++">
+            <div class="custom-control custom-checkbox mb-1" n:for="$i = 1; $i <= 5; $i++">
                 <input type="checkbox" class="custom-control-input" id="filter-{$v}-{$i}">
                 <label class="custom-control-label" for="filter-{$v}-{$i}">{$i}. Vlastnost</label>
             </div>

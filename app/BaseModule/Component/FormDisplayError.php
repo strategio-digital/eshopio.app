@@ -9,6 +9,7 @@ namespace App\BaseModule\Component;
 
 use App\BaseModule\Component\Notification\Entity\Notification;
 use App\BaseModule\Presenter\AbstractPresenter;
+use Nette\Application\AbortException;
 use Nette\Application\UI\Form;
 
 /**
@@ -20,7 +21,7 @@ trait FormDisplayError
 {
     /**
      * @param Form $form
-     * @throws \Nette\Application\AbortException
+     * @throws AbortException
      */
     public function showNotifications(Form $form) : void
     {
@@ -28,7 +29,7 @@ trait FormDisplayError
         $count = count($errors);
 
         for ($i = 0; $i < $count; $i++) {
-            $isLast = $i === $count-1;
+            $isLast = $i === $count - 1;
             $this->notification(Notification::DANGER, 'Neplatné hodnoty', $errors[$i], 4000, $isLast);
         }
     }

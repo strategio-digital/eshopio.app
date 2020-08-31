@@ -5,7 +5,7 @@
 <!doctype html>
 <html class="h-100" lang="cs">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>{ifset title}{include title}{/ifset}</title>
@@ -18,16 +18,17 @@
 </head>
 <body class="h-100 position-relative">
 
-    {include content}
+{include content}
 
 	{block scripts}
-        {control assetLoader 'backend-build.js'}
-	{/block}
+    {control assetLoader 'backend-build.js'}
+{/block}
 
     {* Flash Notifications & Ajax notifications *}
-    <div class="toast-container" id="notifications">
-        {include './../../Component/Notification/templates/notification.latte'}
-    </div>
+
+<div class="toast-container" id="notifications">
+    {include './../../Component/Notification/templates/notification.latte'}
+</div>
 
     {block modals}{/block}
 </body>

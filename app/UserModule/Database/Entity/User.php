@@ -9,7 +9,8 @@ namespace App\UserModule\Database\Entity;
 
 use App\BaseModule\Database\Entity;
 use App\UserModule\Security\Passwords;
-use Doctrine\ORM\Mapping as ORM;
+use DateTime;
+use Exception;
 use Nette\InvalidArgumentException;
 use Nette\Utils\Validators;
 
@@ -53,7 +54,7 @@ class User extends Entity
     /**
      * @ORM\Column(type="datetime", nullable=TRUE)
      */
-    protected ?\DateTime $lastLogin = NULL;
+    protected ?DateTime $lastLogin = NULL;
 
     /**
      * @param string $email
@@ -96,11 +97,11 @@ class User extends Entity
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function setLastLogin() : void
     {
-        $this->lastLogin = new \DateTime('now');
+        $this->lastLogin = new DateTime('now');
     }
 
     /**
@@ -144,9 +145,9 @@ class User extends Entity
     }
 
     /**
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getLastLogin() : ?\DateTime
+    public function getLastLogin() : ?DateTime
     {
         return $this->lastLogin;
     }

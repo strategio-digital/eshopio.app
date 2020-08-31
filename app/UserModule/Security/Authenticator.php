@@ -9,6 +9,7 @@ namespace App\UserModule\Security;
 
 use App\UserModule\Database\Manager\UserManager;
 use App\UserModule\Database\Repository\UserRepository;
+use Exception;
 use Nette\Security\AuthenticationException;
 use Nette\Security\IAuthenticator;
 use Nette\Security\Identity;
@@ -47,7 +48,7 @@ class Authenticator implements IAuthenticator
      * @param array $credentials
      * @return IIdentity
      * @throws AuthenticationException
-     * @throws \Exception
+     * @throws Exception
      */
     function authenticate(array $credentials) : IIdentity
     {

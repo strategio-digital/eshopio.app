@@ -1,4 +1,4 @@
-tinymce.addI18n('cs',{
+tinymce.addI18n('cs', {
     "Redo": "Opakovat",
     "Undo": "Zp\u011bt",
     "Cut": "Vyjmout",

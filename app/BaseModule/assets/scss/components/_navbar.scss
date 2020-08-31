@@ -3,73 +3,72 @@
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  */
 
-.navbar
-{
-    padding: 0 1rem;
-    background: linear-gradient(to bottom right, $primary, lighten($primary, 10%));
+.navbar {
+  padding: 0 1rem;
+  background: linear-gradient(to bottom right, $primary, lighten($primary, 10%));
 
+  @include media-breakpoint-down(md) {
+    padding: 0.5rem 1rem;
+  }
+
+  a {
+    //font-size: 14px;
+    color: $white;
+    @include transition(all 150ms ease);
+  }
+
+  .navbar-brand {
+    //font-size: 20px;
+  }
+
+  .navbar-toggler {
+    color: $white;
+    border: 1px solid $white;
+  }
+
+  .navbar-collapse {
     @include media-breakpoint-down(md) {
-        padding: 0.5rem 1rem;
+      margin-top: 1rem;
     }
 
-    a {
-        //font-size: 14px;
+    .nav-item {
+      .nav-link {
+        padding: 1rem;
         color: $white;
-        @include transition(all 150ms ease);
-    }
 
-    .navbar-brand {
-        //font-size: 20px;
-    }
-
-    .navbar-toggler {
-        color: $white;
-        border: 1px solid $white;
-    }
-
-    .navbar-collapse {
         @include media-breakpoint-down(md) {
-            margin-top: 1rem;
+          background-color: lighten($primary, 10%);
         }
+      }
 
-        .nav-item {
-            .nav-link {
-                padding: 1rem;
-                color: $white;
-
-                @include media-breakpoint-down(md) {
-                    background-color: lighten($primary, 10%);
-                }
-            }
-
-            &:hover,
-            &:focus,
-            &:active,
-            &.active {
-                .nav-link {
-                    background-color: darken($primary, 10%);
-                }
-            }
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        .nav-link {
+          background-color: darken($primary, 10%);
         }
-
-        .dropdown-menu {
-            background-color: $primary;
-            border: 1px solid $primary;
-            margin: 0;
-            padding: 0;
-
-            .dropdown-item {
-                margin: 0;
-                padding: 0.75rem 1rem;
-
-                &:hover,
-                &:focus,
-                &:active,
-                &.active {
-                    background-color: darken($primary, 10%);
-                    color: $white;
-                }
-            }
-        }
+      }
     }
+
+    .dropdown-menu {
+      background-color: $primary;
+      border: 1px solid $primary;
+      margin: 0;
+      padding: 0;
+
+      .dropdown-item {
+        margin: 0;
+        padding: 0.75rem 1rem;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: darken($primary, 10%);
+          color: $white;
+        }
+      }
+    }
+  }
 }

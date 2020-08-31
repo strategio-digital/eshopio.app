@@ -18,7 +18,7 @@ final class HomepagePresenter extends FrontendPresenter
         parent::startup();
 
         $breadCrumbItems = new ArrayCollection([
-           new BreadCrumbItem('Název e-shopu', ':Homepage:Homepage:summary'),
+            new BreadCrumbItem('Název e-shopu', ':Homepage:Homepage:summary'),
         ]);
 
         $this->breadCrumb->setBreadCrumbItems($breadCrumbItems);

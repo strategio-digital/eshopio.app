@@ -9,7 +9,6 @@ namespace App\UserModule\Mailer\User;
 
 use App\BaseModule\Mailer\AbstractAppMailer;
 use App\UserModule\Database\Entity\User;
-use Nette\Mail\Message;
 
 class UserMailer extends AbstractAppMailer
 {

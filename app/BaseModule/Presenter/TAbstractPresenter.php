@@ -9,6 +9,7 @@ namespace App\BaseModule\Presenter;
 
 use App\BaseModule\Component\Notification\Entity\Notification;
 use Latte\Engine;
+use Nette\Application\AbortException;
 
 /**
  * Trait TBasePresenter
@@ -23,7 +24,7 @@ trait TAbstractPresenter
      * @param string $message
      * @param int $delay
      * @param bool $sendPayload
-     * @throws \Nette\Application\AbortException
+     * @throws AbortException
      */
     public function notification(string $type, string $title, string $message, int $delay = 0, bool $sendPayload = TRUE) : void
     {
@@ -58,7 +59,7 @@ trait TAbstractPresenter
      * @param string $element
      * @param string $toggle
      * @param bool $sendPayload
-     * @throws \Nette\Application\AbortException
+     * @throws AbortException
      */
     public function toggleModal(string $element, string $toggle = 'hide', bool $sendPayload = FALSE) : void
     {

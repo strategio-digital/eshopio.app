@@ -12,12 +12,14 @@ use App\BaseModule\Component\Notification\Entity\Notification;
 use App\UserModule\Database\Entity\User;
 use App\UserModule\Database\Repository\UserRepository;
 use Nette;
+use Nette\Bridges\ApplicationLatte\Template;
 use Nette\Security\User as NetteUser;
+use stdClass;
 
 /**
  * Class BasePresenter
  * @package App\Presenter
- * @property-read \Nette\Bridges\ApplicationLatte\Template|\stdClass $template
+ * @property-read Template|stdClass $template
  */
 abstract class AbstractPresenter extends Nette\Application\UI\Presenter
 {

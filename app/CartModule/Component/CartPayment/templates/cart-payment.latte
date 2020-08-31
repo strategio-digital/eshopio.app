@@ -4,28 +4,28 @@
  *}
 
 {var $deliveries = [
-    'Dobríkou' => [
-        'img' => 'cod.svg',
-        'price' => 49
-    ],
-    'Kartou online' => [
-        'img' => 'visa-mc.svg',
-        'price' => -25,
-        'description' => 'Okamžitá platba přes platební bránu GoPay.'
-    ],
-    'Zálohou - převodem z účtu' => [
-        'img' => 'bank.svg',
-        'price' => -25,
-        'description' => 'Klasický bankovní převod - může trvat déle.'
-    ],
-    'Google Pay' => [
-        'img' => 'google-pay.svg',
-        'price' => -25
-    ],
-    'PLATBA 24' => [
-        'img' => 'csas.svg',
-        'price' => -25
-    ],
+'Dobríkou' => [
+'img' => 'cod.svg',
+'price' => 49
+],
+'Kartou online' => [
+'img' => 'visa-mc.svg',
+'price' => -25,
+'description' => 'Okamžitá platba přes platební bránu GoPay.'
+],
+'Zálohou - převodem z účtu' => [
+'img' => 'bank.svg',
+'price' => -25,
+'description' => 'Klasický bankovní převod - může trvat déle.'
+],
+'Google Pay' => [
+'img' => 'google-pay.svg',
+'price' => -25
+],
+'PLATBA 24' => [
+'img' => 'csas.svg',
+'price' => -25
+],
 ]}
 
 <div class="border px-3">
@@ -34,7 +34,8 @@
 
             <div class="col-1 col-sm-1 order-0">
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="payment-{$iterator->getCounter()}" name="payment" class="custom-control-input">
+                    <input type="radio" id="payment-{$iterator->getCounter()}" name="payment"
+                           class="custom-control-input">
                     <label class="custom-control-label" for="payment-{$iterator->getCounter()}"></label>
                 </div>
             </div>

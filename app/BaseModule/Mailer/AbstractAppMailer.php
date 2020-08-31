@@ -72,7 +72,8 @@ abstract class AbstractAppMailer
         string $domain,
         int $port = NULL,
         string $secure = NULL
-    ) {
+    )
+    {
         $this->host = $host;
         $this->password = $password;
         $this->senderName = $senderName;
@@ -89,7 +90,7 @@ abstract class AbstractAppMailer
      */
     public function setPort(?int $port) : void
     {
-        if ($port){
+        if ($port) {
             $this->port = $port;
         }
     }
@@ -115,11 +116,11 @@ abstract class AbstractAppMailer
             'password' => $this->password,
         ];
 
-        if($this->secure){
+        if ($this->secure) {
             $config['secure'] = $this->secure;
         }
 
-        if($this->port){
+        if ($this->port) {
             $config['port'] = $this->port;
         }
 

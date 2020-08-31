@@ -15,7 +15,7 @@ $(function () {
         success: function (payload) {
             var conversion = payload.conversion;
 
-            if(typeof conversion !== 'undefined') {
+            if (typeof conversion !== 'undefined') {
                 methods[conversion.name](conversion);
             }
         }

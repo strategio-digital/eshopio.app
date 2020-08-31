@@ -14,15 +14,17 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 col-xl-5">
                         <div class="owl-carousel d-none d-lg-block" id="owl-product" data-mfp-owl="true">
-                            <a href="//placehold.it/1400x900/{$i*100}" class="d-block" n:for="$i = 0; $i < 10; $i++" data-position="{$i}">
-                                <img src="//placehold.it/800x600/{$i*100}" alt="" class="img-fluid mt-4">
+                            <a href="//placehold.it/1400x900/{$i * 100}" class="d-block" n:for="$i = 0; $i < 10; $i++"
+                               data-position="{$i}">
+                                <img src="//placehold.it/800x600/{$i * 100}" alt="" class="img-fluid mt-4">
                             </a>
                         </div>
                         <div class="mt-3 owl-container">
                             <div class="prev"><i class="fas fa-long-arrow-alt-left"></i></div>
                             <div class="owl-carousel" id="owl-product-thumbnail" data-mfp-owl="true">
-                                <a href="//placehold.it/1400x900/{$i*100}" class="p-lg-2 d-block thumbnail" n:for="$i = 0; $i < 10; $i++" data-position="{$i}">
-                                    <img src="//placehold.it/660x490/{$i*100}" alt="">
+                                <a href="//placehold.it/1400x900/{$i * 100}"
+                                   class="p-lg-2 d-block thumbnail" n:for="$i = 0; $i < 10; $i++" data-position="{$i}">
+                                    <img src="//placehold.it/660x490/{$i * 100}" alt="">
                                 </a>
                             </div>
                             <div class="next"><i class="fas fa-long-arrow-alt-right"></i></div>
@@ -33,7 +35,8 @@
                         <h1 class="mt-4 mt-lg-5">{$presenter->breadCrumb->getLastBreadCrumbItem()->getName()}</h1>
 
                         <div class="d-flex">
-                            <div class="text-warning mr-2" data-toggle="tooltip" data-placement="top" data-title="Hodnocení: 5/5">
+                            <div class="text-warning mr-2" data-toggle="tooltip" data-placement="top"
+                                 data-title="Hodnocení: 5/5">
                                 <i class="fas fa-star" n:for="$s = 0; $s < 5; $s++"></i>
                             </div>
                             <a href="#">
@@ -61,10 +64,13 @@
                         </button>
 
                         <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet commodi cupiditate doloribus
-                            earum enim esse facere ipsam iure laboriosam laudantium possimus provident quae recusandae rem,
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet commodi cupiditate
+                            doloribus
+                            earum enim esse facere ipsam iure laboriosam laudantium possimus provident quae recusandae
+                            rem,
                             tempora ut? Vel, vero.
-                            <br><a href="#" class="mt-2 d-block">Detailní informace <i class="fas fa-angle-down"></i></a>
+                            <br><a href="#" class="mt-2 d-block">Detailní informace <i
+                                        class="fas fa-angle-down"></i></a>
                         </p>
 
 
@@ -74,9 +80,12 @@
 
                 <nav class="mt-5">
                     <div class="nav nav-tabs" id="nav-product" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-home"></i></a>
-                        <a class="nav-item nav-link" id="nav-attributes-tab" data-toggle="tab" href="#nav-attributes" role="tab" aria-controls="nav-attributes" aria-selected="false">Parametry</a>
-                        <a class="nav-item nav-link" id="nav-rating-tab" data-toggle="tab" href="#nav-rating" role="tab" aria-controls="nav-rating" aria-selected="false">Hodnocení</a>
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                           role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-home"></i></a>
+                        <a class="nav-item nav-link" id="nav-attributes-tab" data-toggle="tab" href="#nav-attributes"
+                           role="tab" aria-controls="nav-attributes" aria-selected="false">Parametry</a>
+                        <a class="nav-item nav-link" id="nav-rating-tab" data-toggle="tab" href="#nav-rating" role="tab"
+                           aria-controls="nav-rating" aria-selected="false">Hodnocení</a>
                     </div>
                 </nav>
 
@@ -85,7 +94,8 @@
 
                     </div>
 
-                    <div class="tab-pane fade pt-4" id="nav-attributes" role="tabpanel" aria-labelledby="nav-attributes-tab">
+                    <div class="tab-pane fade pt-4" id="nav-attributes" role="tabpanel"
+                         aria-labelledby="nav-attributes-tab">
                         <table class="table table-sm product-attributes">
                             <tbody>
                             <tr>

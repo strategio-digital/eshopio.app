@@ -3,10 +3,9 @@
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  */
 
-$(function ()
-{
+$(function () {
     // Prevent Bootstrap dialog from blocking focusin
-    $(document).on('focusin', function(e) {
+    $(document).on('focusin', function (e) {
         if ($(e.target).closest('.mce-window').length !== 0) {
             e.stopImmediatePropagation();
         }
@@ -30,8 +29,8 @@ $(function ()
                 paste_as_text: true,
                 entity_encoding: 'raw',
                 height: 500,
-                relative_urls : false,
-                remove_script_host : false,
+                relative_urls: false,
+                remove_script_host: false,
                 menubar: false,
                 nonbreaking_force_tab: true,
                 allow_unsafe_link_target: true,

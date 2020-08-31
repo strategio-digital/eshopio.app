@@ -4,27 +4,27 @@
  *}
 
 {var $deliveries = [
-    'Osobní odběr - České Budějovice' => [
-        'price' => 0,
-        'description' => 'Ulice: Senovážné náměstí 3243/1'
-    ],
-    'Česká pošta - na poštu' => [
-        'img' => 'cp.svg',
-        'price' => 89
-    ],
-    'Česká pošta - do ruky' => [
-        'img' => 'cp.svg',
-        'price' => 89
-    ],
-    'PPL s avizací po ČR' => [
-        'img' => 'ppl.svg',
-        'price' => 129
-    ],
-    'DPD' => [
-        'img' => 'dpd.svg',
-        'price' => 129,
-        'description' => 'Testovací popisek dopravy.'
-    ],
+'Osobní odběr - České Budějovice' => [
+'price' => 0,
+'description' => 'Ulice: Senovážné náměstí 3243/1'
+],
+'Česká pošta - na poštu' => [
+'img' => 'cp.svg',
+'price' => 89
+],
+'Česká pošta - do ruky' => [
+'img' => 'cp.svg',
+'price' => 89
+],
+'PPL s avizací po ČR' => [
+'img' => 'ppl.svg',
+'price' => 129
+],
+'DPD' => [
+'img' => 'dpd.svg',
+'price' => 129,
+'description' => 'Testovací popisek dopravy.'
+],
 ]}
 
 <div class="border px-3">
@@ -33,8 +33,10 @@
 
             <div class="col-1 col-sm-1 order-0">
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="delivery-{$iterator->getCounter()}" name="delivery" class="custom-control-input">
-                    <label class="custom-control-label d-flex align-items-center" for="delivery-{$iterator->getCounter()}"></label>
+                    <input type="radio" id="delivery-{$iterator->getCounter()}" name="delivery"
+                           class="custom-control-input">
+                    <label class="custom-control-label d-flex align-items-center"
+                           for="delivery-{$iterator->getCounter()}"></label>
                 </div>
             </div>
 

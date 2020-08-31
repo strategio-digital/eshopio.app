@@ -4,51 +4,50 @@
  */
 
 @-webkit-keyframes bg-progress {
-    0% {
-        background-position: 0 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0 50%
-    }
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
 }
 
 @-moz-keyframes bg-progress {
-    0% {
-        background-position: 0 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0 50%
-    }
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
 }
 
 @keyframes bg-progress {
-    0% {
-        background-position: 0 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0 50%
-    }
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
 }
 
-[data-ajax-button].disabled
-{
-    animation: bg-progress 500ms infinite;
-    -moz-animation: bg-progress 500ms infinite; /* Firefox */
-    -webkit-animation: bg-progress 500ms infinite; /* Safari and Chrome */
-    background-size: 400% 400%;
-    background-image: linear-gradient(-45deg, lighten($primary, 25%), $primary, lighten($primary, 25%), $primary);
+[data-ajax-button].disabled {
+  animation: bg-progress 500ms infinite;
+  -moz-animation: bg-progress 500ms infinite; /* Firefox */
+  -webkit-animation: bg-progress 500ms infinite; /* Safari and Chrome */
+  background-size: 400% 400%;
+  background-image: linear-gradient(-45deg, lighten($primary, 25%), $primary, lighten($primary, 25%), $primary);
 
-    &.btn-pink,
-    &.btn-outline-pink {
-        background-image: linear-gradient(-45deg, lighten($pink, 25%), $pink, lighten($pink, 25%), $pink);
-    }
+  &.btn-pink,
+  &.btn-outline-pink {
+    background-image: linear-gradient(-45deg, lighten($pink, 25%), $pink, lighten($pink, 25%), $pink);
+  }
 }

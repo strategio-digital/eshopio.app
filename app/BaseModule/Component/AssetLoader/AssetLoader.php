@@ -9,6 +9,7 @@ namespace App\BaseModule\Component\AssetLoader;
 
 use Nette\Application\UI\Control;
 use Nette\Utils\Json;
+use Nette\Utils\JsonException;
 
 class AssetLoader extends Control
 {
@@ -24,7 +25,7 @@ class AssetLoader extends Control
 
     /**
      * AssetLoader constructor.
-     * @throws \Nette\Utils\JsonException
+     * @throws JsonException
      */
     public function __construct()
     {

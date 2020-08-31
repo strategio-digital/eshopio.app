@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace App\UserModule\Console;
 
 use App\UserModule\Database\Manager\UserManager;
+use Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -39,8 +40,7 @@ class CreateUserCommand extends Command
             ->setName('wakers:create-user')
             ->setDescription('Create a new user and save it to the database.')
             ->addArgument('email', InputArgument::REQUIRED, 'E-mail')
-            ->addArgument('password', InputArgument::REQUIRED, 'Password')
-        ;
+            ->addArgument('password', InputArgument::REQUIRED, 'Password');
     }
 
     /**
@@ -56,7 +56,7 @@ class CreateUserCommand extends Command
         try {
             $user = $this->userManager->create($email, $password);
             $output->writeln("<info>User {$user->getEmail()} has been created.</info>");
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $output->writeln("<error>{$exception->getMessage()}</error>");
         }
 

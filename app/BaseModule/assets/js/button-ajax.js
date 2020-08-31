@@ -2,8 +2,7 @@
  * Copyright (c) 2020 Wakers.cz
  * @author Jiří Zapletal (https://www.wakers.cz, zapletal@wakers.cz)
  */
-$(function ()
-{
+$(function () {
     var BUTTON_SELECTOR = '[data-ajax-button]';
 
     $.nette.ext('progress-button', {
@@ -64,12 +63,12 @@ $(function ()
                         $button.html(buttonHtml);
                     },
 
-                    xhr: function() {
+                    xhr: function () {
                         var myXhr = $.ajaxSettings.xhr();
 
-                        if(myXhr.upload) {
+                        if (myXhr.upload) {
                             myXhr.upload.addEventListener('progress', function (event) {
-                                if(event.lengthComputable && showPercentage) {
+                                if (event.lengthComputable && showPercentage) {
                                     var percentage = (event.loaded * 100) / event.total;
 
                                     $button.text(Math.round((percentage * 100) / 100) + '%');

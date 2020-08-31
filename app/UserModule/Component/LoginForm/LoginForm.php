@@ -14,6 +14,7 @@ use App\UserModule\Security\Authenticator;
 use Nette\Application\UI\Form;
 use Nette\Security\AuthenticationException;
 use Nette\Security\User;
+use stdClass;
 
 class LoginForm extends BaseComponent
 {
@@ -74,7 +75,7 @@ class LoginForm extends BaseComponent
             $this->showNotifications($form);
         };
 
-        $form->onSuccess[] = function (Form $form, \stdClass $values) {
+        $form->onSuccess[] = function (Form $form, stdClass $values) {
             try {
 
                 $identity = $this->authenticator->authenticate([$values->email, $values->password]);

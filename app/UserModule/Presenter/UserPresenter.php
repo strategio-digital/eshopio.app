@@ -11,6 +11,7 @@ use App\AppModule\Component\BreadCrumb\Entity\BreadCrumbItem;
 use App\BaseModule\Component\Notification\Entity\Notification;
 use App\BaseModule\Presenter\FrontendPresenter;
 use Doctrine\Common\Collections\ArrayCollection;
+use Nette\Application\AbortException;
 
 final class UserPresenter extends FrontendPresenter
 {
@@ -42,7 +43,7 @@ final class UserPresenter extends FrontendPresenter
     }
 
     /**
-     * @throws \Nette\Application\AbortException
+     * @throws AbortException
      */
     public function actionProfile() : void
     {

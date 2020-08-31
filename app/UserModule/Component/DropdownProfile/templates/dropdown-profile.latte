@@ -6,7 +6,8 @@
 {varType App\UserModule\Presenter\UserPresenter $presenter}
 
 <div class="dropdown dropdown-profile">
-    <a href="{plink :User:User:profile}" class="mr-4 link" id="{$control->getName()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a href="{plink :User:User:profile}" class="mr-4 link" id="{$control->getName()}" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
         <span><i class="fas fa-user mr-1"></i>Váš účet</span><br>
         <span class="small text-dark">{$presenter->activeUser->getEmail()}</span>
     </a>
